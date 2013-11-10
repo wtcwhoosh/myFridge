@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <b>By:</b>
+  <%= @recipe.user.name %>
+</p>
+
+
+<p>
+  <b>Type:</b>
+  <%= @recipe.type.name %>
+</p>
+
+<p>
+  <b>Instruction:</b>
+  <%= @recipe.instruction %>
+</p>
+
+
+<p>
+  <% if @recipe.feedbacks.empty? %>
+      No options for the question have been defined.
+  <% else %>
+
+
+      <% @recipe.feedbacks.each do |o| %>
+          <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />
+      <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Add Feedback', :controller => 'feedbacks', :action => 'new',
+            :recipe_id => @recipe.id %>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
