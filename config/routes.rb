@@ -1,4 +1,10 @@
 MyFridge::Application.routes.draw do
+  resources :recipe_ingredients
+
+
+  resources :ingredients
+
+
   resources :feedbacks
 
 

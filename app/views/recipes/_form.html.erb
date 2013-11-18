@@ -27,10 +27,18 @@
     <% menu_items = all_types.map { |c| [ c.name, c.id ] } %>
     <%= f.select :type_id, menu_items, :class => 'form-control' %>
   </div>
+    <%= f.fields_for :recipe_ingredients do |build| %>
+        <%= build.hidden_field :recipe_id, :value=>params[:recipe_id] %>
+        <%= collection_select(:recipe_ingredient, :ingredient_id, Ingredient.all, :id, :name) %>
+        <%= build.label :quantity, "Quantity:" %>
+        <%= build.text_field :quantity %>
+        <%= build.label :unit, "Unit:" %>
+        <%= build.text_field :unit %>
+        <br>
+    <% end %>
   <div class="field">
     <%= f.label :instruction %><br />
     <%= f.text_area :instruction %>
-
   </div>
 
 

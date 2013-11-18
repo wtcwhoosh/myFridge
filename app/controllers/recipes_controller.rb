@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.user_id = session[:user_id]
+    4.times { @recipe.recipe_ingredients.build }
 
     respond_to do |format|
       format.html # new.html.erb
