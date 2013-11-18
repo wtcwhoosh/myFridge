@@ -6,7 +6,8 @@ class Recipe < ActiveRecord::Base
   has_many :feedbacks, :dependent => :destroy
   has_many :ingredients, :through => :recipe_ingredients
   has_many :recipe_ingredients
-  accepts_nested_attributes_for :recipe_ingredients
+  accepts_nested_attributes_for :recipe_ingredients, :reject_if => lambda { |a| a[:ingredient_id].blank? }                                                                     { |a| a[:ingredient_id].blank? }
+
 
 
 

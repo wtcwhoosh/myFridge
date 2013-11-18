@@ -16,6 +16,13 @@
   <%= @recipe.type.name %>
 </p>
 
+<% if @recipe.recipe_ingredients %>
+    <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
+        <ul>
+          <li><%=  recipe_ingredient.quantity + " Part " + recipe_ingredient.ingredient.name %></li>
+        </ul>
+    <% end %>
+    <% end %>
 <p>
   <b>Instruction:</b>
   <%= @recipe.instruction %>

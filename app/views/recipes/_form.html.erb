@@ -29,7 +29,7 @@
   </div>
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= build.hidden_field :recipe_id, :value=>params[:recipe_id] %>
-        <%= collection_select(:recipe_ingredient, :ingredient_id, Ingredient.all, :id, :name) %>
+        <%= build.collection_select(:ingredient_id, Ingredient.all, :id, :name) %>
         <%= build.label :quantity, "Quantity:" %>
         <%= build.text_field :quantity %>
         <%= build.label :unit, "Unit:" %>
