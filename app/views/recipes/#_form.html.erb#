@@ -1,0 +1,52 @@
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <p>
+      By <%= @recipe.user.name %>
+    </p>
+    <%= f.hidden_field :user_id %>
+
+
+    <div class="field">
+    Recipe name<br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <% all_types = Type.all %>
+    <% menu_items = all_types.map { |c| [ c.name, c.id ] } %>
+    <%= f.select :type_id, menu_items, :class => 'form-control' %>
+  </div>
+        <div class="fields">
+	  <%= link_to_remove_fields "remove", f %>
+	  <%= f.fields_for :recipe_ingredients do |build| %>
+          <%= build.hidden_field :recipe_id, :value=>params[:recipe_id] %>
+          <%= build.collection_select(:ingredient_id, Ingredient.all, :id, :name) %>
+          <%= build.label :quantity, "Quantity:" %>
+          <%= build.text_field :quantity %>
+          <%= build.label :unit, "Unit:" %>
+          <%= build.text_field :unit %>
+          
+
+	</div>
+    <% end %>
+  <div class="field">
+    <%= f.label :instruction %><br />
+    <%= f.text_area :instruction %>
+  </div>
+
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

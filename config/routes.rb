@@ -1,7 +1,7 @@
 MyFridge::Application.routes.draw do
   
    
-
+  root to: 'recipes#index'
   match '/fridge', to: 'fridge#fridge', via: 'get' 
   get "fridge/remove"
   get "fridge/see_recipes"
