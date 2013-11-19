@@ -1,4 +1,11 @@
 MyFridge::Application.routes.draw do
+  
+   
+
+  match '/fridge', to: 'fridge#fridge', via: 'get' 
+  get "fridge/remove"
+  get "fridge/see_recipes"
+
   resources :recipe_ingredients
 
 
