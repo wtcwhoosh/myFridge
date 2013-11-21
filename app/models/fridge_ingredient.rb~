@@ -1,0 +1,3 @@
+class FridgeIngredient < ActiveRecord::Base
+  attr_accessible :ingredient_id, :quantity, :user_id
+end
