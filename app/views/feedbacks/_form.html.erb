@@ -14,10 +14,29 @@
 Recipe: <%= @feedback.recipe.name %>
     <%= f.hidden_field :recipe_id %>
 
-  <div class="field">
-    <%= f.label :rating %><br />
-    <%= f.number_field :rating %>
-  </div>
+
+    <div class="field">
+      <%= f.label :taste_id %><br />
+      <% all_tastes = Taste.all %>
+      <% menu_items = all_tastes.map { |c| [ c.name, c.id ] } %>
+      <%= f.select :taste_id, menu_items, :class => 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :easiness_id %><br />
+      <% all_easiness = Easiness.all %>
+      <% menu_items = all_easiness.map { |c| [ c.name, c.id ] } %>
+      <%= f.select :easiness_id, menu_items, :class => 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :drinkability_id %><br />
+      <% all_drinkability = Drinkability.all %>
+      <% menu_items = all_drinkability.map { |c| [ c.name, c.id ] } %>
+      <%= f.select :drinkability_id, menu_items, :class => 'form-control' %>
+    </div>
+
+
   <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_area :comment %>

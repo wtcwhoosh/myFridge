@@ -1,0 +1,2 @@
+module EasinessesHelper
+end

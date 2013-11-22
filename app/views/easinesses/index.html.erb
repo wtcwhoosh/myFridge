@@ -1,0 +1,23 @@
+<h1>Listing easinesses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @easinesses.each do |easiness| %>
+  <tr>
+    <td><%= easiness.name %></td>
+    <td><%= link_to 'Show', easiness %></td>
+    <td><%= link_to 'Edit', edit_easiness_path(easiness) %></td>
+    <td><%= link_to 'Destroy', easiness, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Easiness', new_easiness_path %>

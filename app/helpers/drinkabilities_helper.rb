@@ -1,0 +1,2 @@
+module DrinkabilitiesHelper
+end

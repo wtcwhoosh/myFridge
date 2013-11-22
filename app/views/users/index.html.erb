@@ -1,29 +1,23 @@
-<h1>Listing users</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Password</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.password %></td>
-    <td><%= user.first_name %></td>
-    <td><%= user.last_name %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<div class="container">
+  <% @users.each do |user| %>
+      <div class="row">
+        <div class="col-sm-1 col-xs-2">
+          <%= image_tag(user.image_url, :class => 'list-profile-image') if user.image? %>
+        </div>
+        <div class="col-sm-4 col-xs-4">
+          <%= link_to(user, :class => 'link-text user-name') do %>
+              <%= user.first_name + " " + user.last_name %>
+          <% end %>
+          <br/>
+          <span class='user-location'><%= user.location %></span>
+        </div>
+        <div class="col-sm-2 col-xs-2">
+          <%= image_tag 'crystalball.png'%>
+          <span class="metadata-text">
+      <%= user.recipes.count %>
+    </span>
+        </div>
+      </div>
+      <br />
+  <% end %>
+</div>

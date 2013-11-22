@@ -2,8 +2,9 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Food</th>
+    <th>Recipe</th>
+    <th>Quantity</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +12,9 @@
 
 <% @ingredients.each do |ingredient| %>
   <tr>
-    <td><%= ingredient.name %></td>
-    <td><%= ingredient.description %></td>
+    <td><%= ingredient.food_id %></td>
+    <td><%= ingredient.recipe_id %></td>
+    <td><%= ingredient.quantity %></td>
     <td><%= link_to 'Show', ingredient %></td>
     <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
     <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

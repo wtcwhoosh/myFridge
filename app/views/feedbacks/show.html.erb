@@ -7,7 +7,22 @@
 
 <p>
   <b>Rating:</b>
-  <%= @feedback.rating %>
+  <%= @feedback.rating = ((@feedback.taste.id+@feedback.drinkability.id+@feedback.easiness.id)/3) %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @feedback.taste.name %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @feedback.drinkability.name %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @feedback.easiness.name %>
 </p>
 
 <p>

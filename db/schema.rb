@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131118164943) do
+ActiveRecord::Schema.define(:version => 20131118231523) do
+
+  create_table "drinkabilities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "easinesses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feedback_ratings", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "feedbacks", :force => true do |t|
     t.integer  "recipe_id"
@@ -19,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20131118164943) do
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+
   end
 
   create_table "ingredients", :force => true do |t|
@@ -44,6 +63,12 @@ ActiveRecord::Schema.define(:version => 20131118164943) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+  end
+
+  create_table "tastes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "types", :force => true do |t|

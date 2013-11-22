@@ -1,13 +1,26 @@
 MyFridge::Application.routes.draw do
+  resources :easinesses
+
+
+  resources :drinkabilities
+
+
   
-   
-  root to: 'recipes#index'
-  match '/fridge', to: 'fridge#fridge', via: 'get' 
-  get "fridge/remove"
-  get "fridge/see_recipes"
+
+
+  resources :tastes
+
+
+  resources :feedback_ratings
+
+
+  
+
+
+  
+
 
   resources :recipe_ingredients
-
 
   resources :ingredients
 
