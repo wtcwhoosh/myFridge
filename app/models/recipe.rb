@@ -1,6 +1,11 @@
 class Recipe < ActiveRecord::Base
   attr_accessible :instruction, :name, :type_id, :recipe_ingredients_attributes
   attr_accessible :user_id
+
+    has_many :foods
+      has_many :ingredients
+  has_many :foods, :through => :ingredients
+
   belongs_to :type
   belongs_to :user
   has_many :feedbacks, :dependent => :destroy

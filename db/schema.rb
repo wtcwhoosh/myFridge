@@ -13,27 +13,31 @@
 
 ActiveRecord::Schema.define(:version => 20131121175347) do
 
+  create_table "drinkabilities", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "easinesses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feedback_ratings", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "feedbacks", :force => true do |t|
     t.integer  "recipe_id"
     t.integer  "rating"
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
 
-  create_table "fridge_ingredients", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "ingredient_id"
-    t.string   "quantity"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "fridges", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "ingredient_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
   end
 
   create_table "ingredients", :force => true do |t|
@@ -59,6 +63,12 @@ ActiveRecord::Schema.define(:version => 20131121175347) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+  end
+
+  create_table "tastes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "types", :force => true do |t|

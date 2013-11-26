@@ -1,0 +1,132 @@
+
+
+body {
+  padding-top: 55px;
+  color: #404040;
+  background-color: #FFFFFF;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.profile-image
+{
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 20px;
+}
+
+
+
+.list-profile-image
+{
+/*  @media (max-width: @screen-xs) 
+  {/
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+/  }
+  @media (min-width: @screen-sm) 
+  { */
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+/*  } */
+}
+
+.user-name
+{
+    font-size: 18px;
+    color: #000000;
+}
+
+.user-location
+{
+    font-style: italic;
+}
+
+a:visited.btn,  a:link.btn
+{
+  color: #ffffff;
+}
+
+a:hover.btn
+{
+  color: #0f0f0f;
+}
+
+a.link-text
+{
+  color: #404040;
+}
+
+a:hover.link-text
+{
+  color: #808080;
+  text-decoration: none;
+}
+
+.category-label
+{
+    padding: 3px 3px 3px 3px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    background-color: rgb(43, 181, 239)
+}
+
+.category-spo
+{
+    background-color: rgb(255, 88, 88);
+}
+
+.category-sci
+{
+    background-color: rgb(180, 180, 180);
+}
+
+.category-pol
+{
+    background-color: rgb(77, 166, 159);
+}
+
+.category-bus
+{
+    background-color: rgb(151, 121, 175);
+}
+
+.category-ent
+{
+    background-color: rgb(148, 219, 80);
+}
+
+.metadata-text
+{
+  color: #808080;
+}
+
+/*
+ * Custom Checkbox for Question Options
+ */
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] + label{
+    background:url('qi_gray.png') no-repeat;
+    height: 26px;
+    width: 200px; 
+    display:inline-block;
+    padding-left: 35px;
+    
+}
+
+input[type="radio"]:checked +label {
+    background:url('qi_blue.png') no-repeat;
+    height: 26px;
+    width: 200px; 
+    display:inline-block;
+    padding-left: 35px;
+}

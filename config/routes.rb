@@ -1,4 +1,10 @@
 MyFridge::Application.routes.draw do
+  resources :easinesses
+
+
+  resources :drinkabilities
+
+
   
    
   resources :fridge_ingredients
@@ -7,7 +13,6 @@ MyFridge::Application.routes.draw do
   root to: 'recipes#index'
   
   resources :recipe_ingredients
-
 
   resources :ingredients
 
