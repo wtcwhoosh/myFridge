@@ -1,18 +1,12 @@
 class Recipe < ActiveRecord::Base
   attr_accessible :instruction, :name, :type_id, :recipe_ingredients_attributes
   attr_accessible :user_id
-
-    has_many :foods
-      has_many :ingredients
-  has_many :foods, :through => :ingredients
-
   belongs_to :type
   belongs_to :user
   has_many :feedbacks, :dependent => :destroy
   has_many :ingredients, :through => :recipe_ingredients
   has_many :recipe_ingredients
-  accepts_nested_attributes_for :recipe_ingredients, :reject_if => lambda { |a| a[:ingredient_id].blank? }                                                                     { |a| a[:ingredient_id].blank? }
-
+  accepts_nested_attributes_for :recipe_ingredients, :allow_destroy => true
 
 
 

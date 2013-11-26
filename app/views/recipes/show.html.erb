@@ -15,27 +15,14 @@
   <b>Type:</b>
   <%= @recipe.type.name %>
 </p>
-<p>
-  <b>Ingredients:</b><br>
-  <% if @recipe.foods.empty? %>
-      No ingredients for the question have been defined.
-  <% else %>
-
-
-      <% @recipe.foods.each do |o| %>
-          <%= o.name %> <%= o.description%>  <br />
-      <% end %>
-  <% end %>
-</p>
-
 
 <% if @recipe.recipe_ingredients %>
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
         <ul>
-          <li><%=  recipe_ingredient.quantity + " Part " + recipe_ingredient.ingredient.name %></li>
+          <li><%=  recipe_ingredient.quantity%> " Part " <%=recipe_ingredient.ingredient.name %></li>
         </ul>
     <% end %>
-    <% end %>
+<% end %>
 <p>
   <b>Instruction:</b>
   <%= @recipe.instruction %>
@@ -49,7 +36,7 @@
 
 
       <% @recipe.feedbacks.each do |o| %>
-          <b>Feedback: </b> Rating: <%= number_with_precision(o.rating, :precision => 2) %> | <%= o.comment %> <br />
+          <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />
       <% end %>
   <% end %>
 </p>

@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+<<<<<<< HEAD
+  name: MyString
+  description: MyString
+
+two:
+  name: MyString
+  description: MyString
+=======
+  food_id: 1
+  recipe_id: 1
+  quantity: 9.99
+
+two:
+  food_id: 1
+  recipe_id: 1
+  quantity: 9.99
+>>>>>>> Feedback and profile updates
