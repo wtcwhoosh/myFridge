@@ -24,7 +24,13 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   # GET /ingredients/new.json
   def new
+<<<<<<< HEAD
     @ingredient = Ingredient.new
+=======
+    @ingredient = Ingredient.new(params[:ingredient])
+    @recipe = Recipe.find(params[:recipe_id])
+
+>>>>>>> Feedback and profile updates
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +47,10 @@ class IngredientsController < ApplicationController
   # POST /ingredients.json
   def create
     @ingredient = Ingredient.new(params[:ingredient])
+<<<<<<< HEAD
+=======
+    @ingredient.recipe = Recipe.find(params[:recipe_id])
+>>>>>>> Feedback and profile updates
 
     respond_to do |format|
       if @ingredient.save
