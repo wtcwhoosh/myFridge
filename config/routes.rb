@@ -6,20 +6,12 @@ MyFridge::Application.routes.draw do
 
 
   
+   
+  resources :fridge_ingredients
 
 
-  resources :tastes
-
-
-  resources :feedback_ratings
-
-
+  root to: 'recipes#index'
   
-
-
-  
-
-
   resources :recipe_ingredients
 
   resources :ingredients

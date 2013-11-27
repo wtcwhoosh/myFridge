@@ -12,7 +12,12 @@
     <div class="col-sm-4 col-xs-4">
       <span class='user-name'><%= @user.first_name + " " + @user.last_name %></span> <br />
       <%= @user.location %> <br />
-
+      <% if @user == User.find(session[:user_id]) %>
+      <%# if @user.current_user? %>  
+      <%= link_to 'Go to Your Fridge', new_fridge_ingredient_path %>
+      <% else %>
+        <p>Ask to share users fridge</p>
+	<% end %>
       <div class="metadata-text">
         Number of Recipes: <%= @user.recipes.count %> <br>
 

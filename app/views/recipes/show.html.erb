@@ -15,6 +15,19 @@
   <b>Type:</b>
   <%= @recipe.type.name %>
 </p>
+<p>
+  <b>Ingredients:</b><br>
+  <% if @recipe.ingredients.empty? %>
+      No ingredients for the question have been defined.
+  <% else %>
+
+
+      <% @recipe.ingredients.each do |o| %>
+          <%= o.name %> <%= o.description%>  <br />
+      <% end %>
+  <% end %>
+</p>
+
 
 <% if @recipe.recipe_ingredients %>
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>

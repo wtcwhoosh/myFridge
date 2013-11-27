@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
 
   has_many :recipes, :dependent => :destroy
+  has_many :fridge_ingredients
+  has_many :ingredients, :through => :fridge_ingredients
 
   validates :name, :presence => true, :uniqueness => true
   validates :password, :presence => true, :confirmation => true

@@ -1,22 +1,22 @@
 MyFridge::Application.routes.draw do
-<<<<<<< HEAD
-  
-   
-  root to: 'recipes#index'
-  match '/fridge', to: 'fridge#fridge', via: 'get' 
-  get "fridge/remove"
-  get "fridge/see_recipes"
-
-  resources :recipe_ingredients
-=======
   resources :easinesses
 
 
   resources :drinkabilities
 
 
-  resources :easiensses
+  
+<<<<<<< HEAD
+   
+  resources :fridge_ingredients
 
+
+  root to: 'recipes#index'
+  
+  resources :recipe_ingredients
+=======
+
+>>>>>>> ist488
 
   resources :tastes
 
@@ -24,12 +24,13 @@ MyFridge::Application.routes.draw do
   resources :feedback_ratings
 
 
-  resources :foods
+  
 
 
-  resources :tests
->>>>>>> Feedback and profile updates
+  
 
+
+  resources :recipe_ingredients
 
   resources :ingredients
 
@@ -50,7 +51,6 @@ MyFridge::Application.routes.draw do
 
 
   resources :recipes
-
 
 
   # The priority is based upon order of creation:
