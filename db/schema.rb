@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20131121234412) do
     t.integer  "easiness_id"
   end
 
+  create_table "fridge_ingredients", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ingredient_id"
+    t.string   "quantity"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "ingredients", :force => true do |t|
     t.string   "name"
     t.string   "description"
