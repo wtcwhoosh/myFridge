@@ -48,7 +48,7 @@ class FridgeIngredientsController < ApplicationController
 
     respond_to do |format|
       if @fridge_ingredient.save
-        format.html { redirect_to @fridge_ingredient, notice: 'Fridge ingredient was successfully created.' }
+        format.html { redirect_to new_fridge_ingredient_path, notice: 'Fridge ingredient was successfully created.' }
         format.json { render json: @fridge_ingredient, status: :created, location: @fridge_ingredient }
       else
         format.html { render action: "new" }
@@ -80,7 +80,7 @@ class FridgeIngredientsController < ApplicationController
     @fridge_ingredient.destroy
 
     respond_to do |format|
-      format.html { redirect_to fridge_ingredients_url }
+      format.html { redirect_to new_fridge_ingredient_path }
       format.json { head :no_content }
     end
   end
