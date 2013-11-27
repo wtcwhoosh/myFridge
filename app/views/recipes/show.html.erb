@@ -17,12 +17,12 @@
 </p>
 <p>
   <b>Ingredients:</b><br>
-  <% if @recipe.foods.empty? %>
+  <% if @recipe.ingredients.empty? %>
       No ingredients for the question have been defined.
   <% else %>
 
 
-      <% @recipe.foods.each do |o| %>
+      <% @recipe.ingredients.each do |o| %>
           <%= o.name %> <%= o.description%>  <br />
       <% end %>
   <% end %>
