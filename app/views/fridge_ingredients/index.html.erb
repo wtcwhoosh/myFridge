@@ -2,20 +2,13 @@
 
 <table>
   <tr>
-    <th>Ingredient</th>
-    <th>Quantity</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Drink</th>
   </tr>
 <% if @user.fridge_ingredients %>
   <% @user.fridge_ingredients.each do |fridge_ingredient| %>
     <tr>
       <td><%= fridge_ingredient.ingredient.name %></td>
-      <td><%= fridge_ingredient.quantity %></td>
-      <td><%= link_to 'Show', fridge_ingredient %></td>
-      <td><%= link_to 'Edit', edit_fridge_ingredient_path(fridge_ingredient) %></td>
-      <td><%= link_to 'Destroy', fridge_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Remove', fridge_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

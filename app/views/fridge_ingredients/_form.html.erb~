@@ -12,17 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+    <%= f.hidden_field :user_id, :value=> @user.id %>
   </div>
   <div class="field">
     <%= f.label :ingredient_id %><br />
-    <%= f.number_field :ingredient_id %>
+    <%= f.collection_select(:ingredient_id, Ingredient.all, :id, :name) %>
   </div>
-  <div class="field">
-    <%= f.label :quantity %><br />
-    <%= f.text_field :quantity %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

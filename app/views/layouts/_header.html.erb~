@@ -1,17 +1,18 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%= image_tag 'psyqic_logo_24.png' %></a>
+      
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/recipes">Recipes</a></li>
-        <li><a href="/users">People</a></li>
+<li><a class="brand" href="http://localhost:3000/fridge_ingredients/new"> <img src="assets/Logo.png" alt-"Aperatif"></a></li>
+        <li><a href="/fridge_ingredients/new">Home</a></li>
+        <li><a href="/recipes">Drinks</a></li>
         <!-- li><a href="/questions/new" class="qi-navbar-button">
           <span class="icon-vertical-bar"></span>
           <span class="icon-bar"></span>
