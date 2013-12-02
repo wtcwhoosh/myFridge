@@ -21,12 +21,7 @@
     Recipe name<br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :type_id %><br />
-    <% all_types = Type.all %>
-    <% menu_items = all_types.map { |c| [ c.name, c.id ] } %>
-    <%= f.select :type_id, menu_items, :class => 'form-control' %>
-  </div>
+
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= render 'recipe_ingredient_fields', :f => build %>
     <% end %>
