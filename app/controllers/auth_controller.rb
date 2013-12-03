@@ -4,7 +4,7 @@ class AuthController < ApplicationController
       @user = User.find_by_name(params[:name])
       if @user && @user.password == params[:password]
         session[:user_id] = @user.id
-        redirect_to @user
+        redirect_to new_fridge_ingredient_path
       else
         flash[:error] = "Invalid user name/password."
         redirect_to :back

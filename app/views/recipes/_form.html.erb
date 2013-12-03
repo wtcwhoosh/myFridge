@@ -18,15 +18,16 @@
 
 
     <div class="field">
-    Recipe name<br />
+    Name<br />
     <%= f.text_field :name %>
   </div>
 
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= render 'recipe_ingredient_fields', :f => build %>
     <% end %>
-    <%= link_to_add_fields "add ingredients", f, :recipe_ingredients %>
+    <%= link_to_add_fields "Add More Ingredients", f, :recipe_ingredients %>
   <div class="field">
+
     <%= f.label :instruction %><br />
     <%= f.text_area :instruction %>
 

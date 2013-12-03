@@ -37,11 +37,11 @@
       No recipes for the user have been defined.
     <% else %>
       <% @user.recipes.each do |o| %>
-      <% feedbackSum = 0 %>
-      <% feedbackCount = 0 %>
+      <% feedbackSum = 0.0 %>
+      <% feedbackCount = 0.0 %>
       <% o.feedbacks.each do |i| %>
       <% feedbackSum += i.rating %>
-      <% feedbackCount += 1 %>
+      <% feedbackCount += 1.0 %>
       <% end %>
       <b>Recipe: </b> 
       Name:  <%= link_to o.name, o %>| 

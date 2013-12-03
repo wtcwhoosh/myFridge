@@ -1,4 +1,7 @@
 MyFridge::Application.routes.draw do
+  resources :recipe_loopers
+
+
   resources :easinesses
 
 

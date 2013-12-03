@@ -8,6 +8,7 @@
   <% @user.fridge_ingredients.each do |fridge_ingredient| %>
     <tr>
       <td><%= fridge_ingredient.ingredient.name %></td>
+      <td><%= link_to 'Show', fridge_ingredient %></td>
       <td><%= link_to 'Remove', fridge_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>

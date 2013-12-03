@@ -5,16 +5,9 @@
   <%= @recipe.name %>
 </p>
 
-<p>
-  <b>By:</b>
-  <%= @recipe.user.name %>
-</p>
 
 
-<p>
-  <b>Type:</b>
-  <%= @recipe.type.name %>
-</p>
+
 <p>
   <b>Ingredients:</b><br>
   <% if @recipe.ingredients.empty? %>
@@ -37,7 +30,7 @@
     <% end %>
 <% end %>
 <p>
-  <b>Instruction:</b>
+  <b>Instructions:</b>
   <%= @recipe.instruction %>
 </p>
 

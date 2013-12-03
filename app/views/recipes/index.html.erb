@@ -1,9 +1,9 @@
-<h1>Listing recipes</h1>
+<h1>Listing All Drinks</h1>
 
 <table>
   <tr>
     <th>Name</th>
-    <th>Instruction</th>
+
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +12,6 @@
 <% @recipes.each do |recipe| %>
   <tr>
     <td><%= recipe.name %></td>
-    <td><%= recipe.instruction %></td>
     <td><%= link_to 'Show', recipe %></td>
     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
     <td><%= button_to  "delete", recipe, :method=>:delete, :class=>:destroy %> </td>
