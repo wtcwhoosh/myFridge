@@ -10,6 +10,6 @@ class Feedback < ActiveRecord::Base
   before_save :set_rating
 
   def set_rating
-    self.rating = [taste_id, easiness_id, drinkability_id].sum / 3.0
+    self.rating = taste_id
   end
 end

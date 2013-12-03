@@ -47,7 +47,7 @@
       Name:  <%= link_to o.name, o %>| 
       Rating:
       <% if o.feedbacks.empty? %> 
-        This person doesn't give feedback. 
+        No feedback.
       <% else %>
       <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%> 
       <% end %><br />

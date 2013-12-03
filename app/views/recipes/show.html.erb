@@ -5,7 +5,10 @@
   <%= @recipe.name %>
 </p>
 
-
+<p>
+  <b>By:</b>
+  <%= link_to @recipe.user.name, @recipe.user %>
+</p>
 
 
 <p>

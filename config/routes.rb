@@ -8,7 +8,7 @@ MyFridge::Application.routes.draw do
   resources :drinkabilities
 
 
-  
+  resources :tastes
    
   resources :fridge_ingredients
 

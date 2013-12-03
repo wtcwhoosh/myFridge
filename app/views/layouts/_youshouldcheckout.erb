@@ -1,3 +1,10 @@
+<table class="sortable">
+  <tr>
+    <th><%="name" %></th>
+    <th><%="rating" %></th>
+  </tr>
+
+
 
 <% userIngredients = [] %>
 <% @user.fridge_ingredients.each do |fridge_ingredients| %>
@@ -18,8 +25,35 @@
 
 
     <% if isIncluded %>
-        <%= link_to recipe.name, recipe %> <br>
+
+
+
+
+              <tr>
+                <td><%= link_to recipe.name, recipe %></td>
+                <td><% feedbackSum = 0.0 %>
+                  <% feedbackCount = 0.0 %>
+                  <% recipe.feedbacks.each do |i| %>
+                      <% feedbackSum += i.rating %>
+                      <% feedbackCount += 1.0 %>
+                  <% end %>
+
+                  <% if recipe.feedbacks.empty? %>
+                      No feedback
+                  <% else %>
+                      <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+                  <% end %></td>
+              </tr>
+
+
+
+
+
+
+
+
     <% end %>
 
 <% end %>
 
+</table>

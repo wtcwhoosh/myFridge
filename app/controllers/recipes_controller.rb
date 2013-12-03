@@ -26,6 +26,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.user_id = session[:user_id]
+
     4.times { @recipe.recipe_ingredients.build }
 
     respond_to do |format|
@@ -82,4 +83,6 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

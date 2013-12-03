@@ -1,10 +1,11 @@
 class FridgeIngredientsController < ApplicationController
   # GET /fridge_ingredients
   # GET /fridge_ingredients.json
+  helper_method :sort_column, :sort_direction
   def index
     @user = User.find(session[:user_id])
     @fridge_ingredients = FridgeIngredient.all
-
+    @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @fridge_ingredients }
@@ -28,6 +29,7 @@ class FridgeIngredientsController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     @fridge_ingredient = FridgeIngredient.new
+    @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -84,4 +86,14 @@ class FridgeIngredientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def sort_column
+    Recipe.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end
