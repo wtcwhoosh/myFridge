@@ -15,9 +15,6 @@
   <% else %>
 
 
-      <% @recipe.ingredients.each do |o| %>
-          <%= o.name %> <%= o.description%>  <br />
-      <% end %>
   <% end %>
 </p>
 
@@ -25,7 +22,7 @@
 <% if @recipe.recipe_ingredients %>
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
         <ul>
-          <li><%=  recipe_ingredient.quantity%> " Part " <%=recipe_ingredient.ingredient.name %></li>
+          <li><%=recipe_ingredient.ingredient.name %></li>
         </ul>
     <% end %>
 <% end %>
@@ -37,7 +34,7 @@
 
 <p>
   <% if @recipe.feedbacks.empty? %>
-      No options for the question have been defined.
+      No feedbacks have been given
   <% else %>
 
 

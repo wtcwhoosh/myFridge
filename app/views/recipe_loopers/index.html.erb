@@ -1,0 +1,23 @@
+<h1>Listing recipe_loopers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recipe_loopers.each do |recipe_looper| %>
+  <tr>
+    <td><%= recipe_looper.name %></td>
+    <td><%= link_to 'Show', recipe_looper %></td>
+    <td><%= link_to 'Edit', edit_recipe_looper_path(recipe_looper) %></td>
+    <td><%= link_to 'Destroy', recipe_looper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recipe looper', new_recipe_looper_path %>

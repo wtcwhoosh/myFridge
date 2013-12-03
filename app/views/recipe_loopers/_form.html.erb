@@ -1,0 +1,21 @@
+<%= form_for(@recipe_looper) do |f| %>
+  <% if @recipe_looper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe_looper.errors.count, "error") %> prohibited this recipe_looper from being saved:</h2>
+
+      <ul>
+      <% @recipe_looper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.number_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

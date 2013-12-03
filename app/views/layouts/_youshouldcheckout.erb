@@ -1,0 +1,25 @@
+
+<% userIngredients = [] %>
+<% @user.fridge_ingredients.each do |fridge_ingredients| %>
+ <% userIngredients.push(fridge_ingredients.ingredient_id)  %>
+    <% end %>
+
+
+<% @user.recipe_looper.recipes.each do |recipe|%>
+    <% recipeIngredients = [] %>
+    <% isIncluded = false %>
+         <% recipe.recipe_ingredients.each do |recipe_ingredient| %>
+           <% recipeIngredients.push(recipe_ingredient.ingredient_id) %>
+         <% end %>
+    <% require 'set' %>
+    <% set_userIngredients = userIngredients.to_set %>
+    <% set_recipeIngredients = recipeIngredients.to_set %>
+    <% isIncluded = set_recipeIngredients.subset? set_userIngredients %>
+
+
+    <% if isIncluded %>
+            <%= recipe.name %><br>
+    <% end %>
+
+<% end %>
+
