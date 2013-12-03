@@ -12,7 +12,7 @@
     <% end %>
 
 
-<% @user.recipe_looper.recipes.each do |recipe|%>
+<% Recipe.all.each do |recipe|%>
     <% recipeIngredients = [] %>
     <% isIncluded = false %>
          <% recipe.recipe_ingredients.each do |recipe_ingredient| %>
