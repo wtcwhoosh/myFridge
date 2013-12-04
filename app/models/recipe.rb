@@ -15,4 +15,9 @@ class Recipe < ActiveRecord::Base
   validates :instruction, :presence => true
   validates :name, :presence => true
 
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("name like ?", "%#{query}%")
+  end
+
 end

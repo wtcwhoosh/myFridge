@@ -1,13 +1,30 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
-  def index
-    @recipes = Recipe.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @recipes }
+  before_filter :authorize_recipe_creator, :only => [:edit, :update, :destroy]
+  helper_method :recipe_creator?
+
+  def authorize_recipe_creator
+    if ! recipe_creator?
+      flash[:error] = 'The action is only allowed to the creator of the recipe.'
+      redirect_to :back
     end
+  end
+  def recipe_creator?
+    user = User.find(session[:user_id])
+    recipe = Recipe.find(params[:id])
+    user and recipe and user.id == recipe.user_id
+  end
+
+  def index
+    @recipes = Recipe.search(params[:search])
+    #@recipes = Recipe.all
+
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.json { render json: @recipes }
+    #end
   end
 
   # GET /recipes/1

@@ -1,6 +1,21 @@
 class UsersController < ApplicationController
   skip_before_filter :authenticate, :only => [:new, :create]
-  
+
+  before_filter :authorize_user_self, :only => [:edit, :update, :destroy]
+  helper_method :user_self?
+
+  def authorize_user_self
+    if !user_self?
+      flash[:error] = 'The action is only allowed to the user him/herself.'
+      redirect_to :back
+    end
+  end
+
+  def user_self?
+    user = User.find(params[:id])
+    user and user.id == session[:user_id]
+  end
+
 
   # GET /users
   # GET /users.json
