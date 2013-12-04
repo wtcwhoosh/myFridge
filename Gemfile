@@ -19,7 +19,7 @@ gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem "jquery-ui-rails"
 gem 'jquery-rails'
 
 gem 'carrierwave'
