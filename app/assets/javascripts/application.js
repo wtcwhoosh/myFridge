@@ -32,7 +32,9 @@
  This basically means: do what you want with it.
  */
 
-
+$('#input').keydown(function() {
+    this.value = this.value.toLowerCase();
+});
 
 var stIsIE = /*@cc_on!@*/false;
 

@@ -4,3 +4,4 @@
 jQuery ->
   $('#fridge_ingredient_ingredient_name').autocomplete
     source: $('#fridge_ingredient_ingredient_name').data('autocomplete-source')
+
