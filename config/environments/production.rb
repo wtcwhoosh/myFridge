@@ -7,7 +7,7 @@ MyFridge::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-
+  config.assets.precompile += %w( jquery.dataTables.min.js jquery-ui-1.8.21.custom.min.js jquery-ui-1.8.21.custom.css bootstrap-datepicker.js fullcalendar.js)
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
