@@ -7,9 +7,11 @@ class User < ActiveRecord::Base
 
    belongs_to :recipe_looper
 
+  make_flagger
   has_many :recipes, :dependent => :destroy
   has_many :fridge_ingredients
   has_many :ingredients, :through => :fridge_ingredients
+  has_many :favorites,  :dependent => :destroy
 
   validates :name, :presence => true, :uniqueness => true
   validates :password, :presence => true, :confirmation => true

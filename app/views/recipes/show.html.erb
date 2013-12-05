@@ -1,27 +1,19 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @recipe.name %>
 </p>
-
 <p>
   <b>By:</b>
   <%= link_to @recipe.user.name, @recipe.user %>
 </p>
-
-
 <p>
   <b>Ingredients:</b><br>
   <% if @recipe.ingredients.empty? %>
       No ingredients for the question have been defined.
   <% else %>
-
-
   <% end %>
 </p>
-
-
 <% if @recipe.recipe_ingredients %>
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
         <ul>
@@ -33,23 +25,16 @@
   <b>Instructions:</b>
   <%= @recipe.instruction %>
 </p>
-
-
 <p>
   <% if @recipe.feedbacks.empty? %>
       No feedbacks have been given
   <% else %>
-
-
       <% @recipe.feedbacks.each do |o| %>
           <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />
       <% end %>
   <% end %>
 </p>
-
 <%= link_to 'Add Feedback', :controller => 'feedbacks', :action => 'new',
             :recipe_id => @recipe.id %>
-
-
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

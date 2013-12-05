@@ -1,15 +1,15 @@
 <%= form_for(@recipe) do |f| %>
-  <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+    <% if @recipe.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-      <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @recipe.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <p>
       By <%= @recipe.user.name %>
@@ -18,23 +18,28 @@
 
 
     <div class="field">
-    Name<br />
-    <%= f.text_field :name %>
-  </div>
-
+      <b>Recipe Name</b><br />
+      <%= f.text_field :name %>
+    </div>
+    <br>
+    <b>Ingredient:</b>
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= render 'recipe_ingredient_fields', :f => build %>
     <% end %>
-    <%= link_to_add_fields "Add More Ingredients", f, :recipe_ingredients %>
-  <div class="field">
 
-    <%= f.label :instruction %><br />
-    <%= f.text_area :instruction %>
+    <br>
+    <b><%= link_to_add_fields "Add More Ingredients", f, :recipe_ingredients %></b>
+    <div class="field">
 
-  </div>
+      <br>
+
+      <%= f.label :instruction, "Instructions" %><br />
+      <%= f.text_area :instruction %>
+
+    </div>
 
 
     <div class="actions">
-    <%= f.submit %>
-  </div>
+      <%= f.submit %>
+    </div>
 <% end %>

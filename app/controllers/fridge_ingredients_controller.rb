@@ -2,6 +2,10 @@ class FridgeIngredientsController < ApplicationController
   # GET /fridge_ingredients
   # GET /fridge_ingredients.json
   helper_method :sort_column, :sort_direction
+
+
+
+
   def index
     @user = User.find(session[:user_id])
     @fridge_ingredients = FridgeIngredient.all

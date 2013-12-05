@@ -11,23 +11,32 @@
     <%= submit_tag "Search" %>
 <% end %>
 
-<table>
+<table class="sortable">
 
 
   <tr>
     <th>Name</th>
 
-    <th></th>
+    <th>Ratings</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @recipes.each do |recipe| %>
   <tr>
-    <td><%= recipe.name %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= button_to  "delete", recipe, :method=>:delete, :class=>:destroy %> </td>
+    <td><%= image_tag 'drinkpic.png' %><%= link_to recipe.name, recipe %></td>
+    <td><% feedbackSum = 0.0 %>
+      <% feedbackCount = 0.0 %>
+      <% recipe.feedbacks.each do |i| %>
+          <% feedbackSum += i.rating %>
+          <% feedbackCount += 1.0 %>
+      <% end %>
+
+      <% if recipe.feedbacks.empty? %>
+          No feedback
+      <% else %>
+          <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+      <% end %></td>
 
   </tr>
 <% end %>
@@ -35,4 +44,4 @@
 
 <br />
 
-<%= link_to 'New Recipe', new_recipe_path %>
+

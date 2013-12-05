@@ -10,7 +10,7 @@ class Recipe < ActiveRecord::Base
   belongs_to :recipe_looper
   accepts_nested_attributes_for :recipe_ingredients,:reject_if => lambda { |a| a[:ingredient_id].blank? }, :allow_destroy => true
 
-
+  make_flaggable :like
 
   validates :instruction, :presence => true
   validates :name, :presence => true
@@ -20,4 +20,11 @@ class Recipe < ActiveRecord::Base
     where("name like ?", "%#{query}%")
   end
 
+  def recipe_name
+    recipe.try(:name)
+  end
+
+  def recipe_name=(name)
+    self.recipe = recipe.find_or_create_by_name(name) if name.present?
+  end
 end

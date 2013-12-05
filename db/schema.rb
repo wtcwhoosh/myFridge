@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203002323) do
+ActiveRecord::Schema.define(:version => 20131205000636) do
 
   create_table "drinkabilities", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(:version => 20131203002323) do
 
   create_table "easinesses", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "favorites", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -41,6 +46,21 @@ ActiveRecord::Schema.define(:version => 20131203002323) do
     t.integer  "drinkability_id"
     t.integer  "easiness_id"
   end
+
+  create_table "flaggings", :force => true do |t|
+    t.string   "flaggable_type"
+    t.integer  "flaggable_id"
+    t.string   "flagger_type"
+    t.integer  "flagger_id"
+    t.string   "flag"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "flaggings", ["flag", "flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flag_and_flaggable_type_and_flaggable_id"
+  add_index "flaggings", ["flag", "flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flag_flaggings"
+  add_index "flaggings", ["flaggable_type", "flaggable_id"], :name => "index_flaggings_on_flaggable_type_and_flaggable_id"
+  add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], :name => "access_flaggings"
 
   create_table "fridge_ingredients", :force => true do |t|
     t.integer  "user_id"

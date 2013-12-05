@@ -2,6 +2,7 @@ class FridgeIngredient < ActiveRecord::Base
   attr_accessible :ingredient_id, :quantity, :user_id, :ingredient_name
   belongs_to :user
   belongs_to :ingredient
+
   def ingredient_name
     ingredient.try(:name)
   end

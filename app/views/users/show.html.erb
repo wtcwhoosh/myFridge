@@ -19,9 +19,10 @@
     <% end %>
     <div class="metadata-text">
       Number of Recipes: <%= @user.recipes.count %> <br>
+
       <% allRecipeSum = 0 %>
       <% numOfFeedbacks = 0 %>
-      <% @user.recipes.each do |recipe| %>
+      <% @user.recipes.each  do |recipe| %>
       <% recipeSum = 0 %>
       <% recipe.feedbacks.each do |feedback| %>
       <% recipeSum += feedback.rating %>
@@ -29,31 +30,42 @@
       <%end%>
       <% allRecipeSum += recipeSum %>
       <%end%>
-      Average Recipe Rating: <%= number_with_precision(allRecipeSum.to_f / numOfFeedbacks, :precision => 2) %>
+      Average Feedback Rating: <%= number_with_precision(allRecipeSum.to_f / numOfFeedbacks, :precision => 2) %>
     </div>
   </div>
-  <div class="col-sm-6 col-xs-6">
+
     <% if @user.recipes.empty? %>
       No recipes for the user have been defined.
     <% else %>
+        <table class="sortable">
+        <tr>
+          <th>Name</th>
+
+          <th>Ratings</th>
+          <th></th>
+          <th></th>
+        </tr>
       <% @user.recipes.each do |o| %>
+              <tr>
       <% feedbackSum = 0.0 %>
       <% feedbackCount = 0.0 %>
       <% o.feedbacks.each do |i| %>
       <% feedbackSum += i.rating %>
       <% feedbackCount += 1.0 %>
       <% end %>
-      <b>Recipe: </b> 
-      Name:  <%= link_to o.name, o %>| 
-      Rating:
-      <% if o.feedbacks.empty? %> 
+
+      <td><%= image_tag 'drinkpic.png' %><%= link_to o.name, o %><td/>
+
+      <td><% if o.feedbacks.empty? %>
         No feedback.
       <% else %>
-      <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%> 
-      <% end %><br />
+      <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+      <% end %><td/>
       <% end %>
+          <tr/>
+            <table/>
       <% end %>
-  </div>
+
 </div>
 
 
