@@ -18,7 +18,7 @@
     <file path="/fridge_ingredients_controller.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386209049048" ignored="false" />
     <file path="/_youshouldcheckout.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386209828230" ignored="false" />
     <file path="/fridge_ingredient.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386209759745" ignored="false" />
-    <file path="/bootstrap.css" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386257006619" ignored="false" />
+    <file path="/bootstrap.css" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386258314385" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="63" selection-start="1914" selection-end="1914" vertical-scroll-proportion="-12.5">
+            <state line="63" column="63" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +77,7 @@
       <file leaf-file-name="_youshouldcheckout.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_youshouldcheckout.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="27" selection-start="860" selection-end="1345" vertical-scroll-proportion="-6.6666665">
+            <state line="44" column="27" selection-start="860" selection-end="1345" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,7 +104,7 @@
       <file leaf-file-name="_fridge_ingredients_list.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_fridge_ingredients_list.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="25" selection-start="379" selection-end="379" vertical-scroll-proportion="-10.625">
+            <state line="17" column="25" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,7 +113,7 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="54" selection-start="400" selection-end="400" vertical-scroll-proportion="-6.875">
+            <state line="11" column="54" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,7 +122,7 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="23" selection-start="257" selection-end="257" vertical-scroll-proportion="0.33936653">
+            <state line="650" column="84" selection-start="9536" selection-end="9536" vertical-scroll-proportion="0.063424945">
               <folding />
             </state>
           </provider>
@@ -152,13 +152,13 @@
         <option value="$PROJECT_DIR$/app/models/recipe.rb" />
         <option value="$PROJECT_DIR$/app/views/recipes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/views/fridge_ingredients/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="178" />
+    <option name="y" value="164" />
     <option name="width" value="1156" />
     <option name="height" value="697" />
   </component>
@@ -189,7 +189,6 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -492,6 +491,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -634,14 +634,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="178" width="1156" height="697" extended-state="0" />
+    <frame x="0" y="164" width="1156" height="697" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26630434" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27173913" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -739,16 +739,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/fridge_ingredients_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="83" selection-start="1535" selection-end="1737" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="57" column="83" selection-start="1535" selection-end="1737" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ingredients_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recipes/_recipe_ingredient_fields.erb">
@@ -788,35 +784,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="63" selection-start="1914" selection-end="1914" vertical-scroll-proportion="-12.5">
+        <state line="63" column="63" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_youshouldcheckout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="27" selection-start="860" selection-end="1345" vertical-scroll-proportion="-6.6666665">
+        <state line="44" column="27" selection-start="860" selection-end="1345" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_fridge_ingredients_list.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="379" selection-end="379" vertical-scroll-proportion="-10.625">
+        <state line="17" column="25" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="54" selection-start="400" selection-end="400" vertical-scroll-proportion="-6.875">
+        <state line="11" column="54" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="257" selection-end="257" vertical-scroll-proportion="0.33936653">
+        <state line="650" column="84" selection-start="9536" selection-end="9536" vertical-scroll-proportion="0.063424945">
           <folding />
         </state>
       </provider>
