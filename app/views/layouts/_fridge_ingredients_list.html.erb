@@ -10,7 +10,7 @@
     <tr>
       <td><%= fridge_ingredient.ingredient.name %></td>
 
-      <td><%= link_to 'Remove', fridge_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to (image_tag('remove.png')), fridge_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

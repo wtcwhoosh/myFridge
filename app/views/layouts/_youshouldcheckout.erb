@@ -13,56 +13,65 @@
     <% end %>
 
 
-<% Recipe.all.each do |recipe|%>
-    <% recipeIngredients = [] %>
-    <% isIncluded = false %>
-         <% recipe.recipe_ingredients.each do |recipe_ingredient| %>
-           <% recipeIngredients.push(recipe_ingredient.ingredient_id) %>
-         <% end %>
-    <% require 'set' %>
-    <% set_userIngredients = userIngredients.to_set %>
-    <% set_recipeIngredients = recipeIngredients.to_set %>
-    <% isIncluded = set_recipeIngredients.subset? set_userIngredients %>
-
-
-    <% if isIncluded %>
+<% userIngredientArray = [] %>
+<% @ingredients = Ingredient.find(:all)  %>
+<% Ingredient.all.each do |ingredient|%>
+   <% if userIngredients.include? ingredient.id %>
+   <% userIngredientArray.push(ingredient.name.downcase) %>
+   <%end%>
+<%end%>
 
 
 
 
-              <tr>
-               <% if recipe.drinktype == "jjuice"%>
+  <% Recipe.all.each do |recipe|%>
+      <% recipeIngredients = [] %>
+      <% isIncluded = false %>
+      <% recipe.recipe_ingredients.each do |recipe_ingredient| %>
+          <% recipeIngredients.push(recipe_ingredient.ingredient_id) %>
+      <% end %>
 
-                    <td><%= image_tag 'redcup.png' %>
-                <% elsif recipe.drinktype == "martini"%>
-                    <td><%= image_tag 'glass.png' %>
-                <% else%>
-                    <td><%= image_tag 'cocktail.png' %>
-                <%end%><%= link_to recipe.name, recipe %></td>
-                <td><% feedbackSum = 0.0 %>
-                  <% feedbackCount = 0.0 %>
-                  <% recipe.feedbacks.each do |i| %>
-                      <% feedbackSum += i.rating %>
-                      <% feedbackCount += 1.0 %>
-                  <% end %>
+      <% recipeIngredientArray = [] %>
+      <% @ingredients = Ingredient.find(:all)  %>
+      <% Ingredient.all.each do |ingredient|%>
+          <% if recipeIngredients.include? ingredient.id %>
+              <% recipeIngredientArray.push(ingredient.name.downcase) %>
+          <%end%>
+      <%end%>
 
-                  <% if recipe.feedbacks.empty? %>
-                      No Ratings
-                  <% else %>
-                      <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
-                  <% end %></td>
+      <% require 'set' %>
+      <% set_userIngredients = userIngredientArray.to_set %>
+      <% set_recipeIngredients = recipeIngredientArray.to_set %>
+      <% isIncluded = set_recipeIngredients.subset? set_userIngredients %>
 
-              </tr>
+      <% if isIncluded %>
+          <tr>
+            <% if recipe.drinktype == "jjuice"%>
+                <td><%= image_tag 'redcup.png' %>
+            <% elsif recipe.drinktype == "martini"%>
+                <td><%= image_tag 'glass.png' %>
+            <% else%>
+                <td><%= image_tag 'cocktail.png' %>
+            <%end%><%= link_to recipe.name, recipe %></td>
+            <td><% feedbackSum = 0.0 %>
+              <% feedbackCount = 0.0 %>
+              <% recipe.feedbacks.each do |i| %>
+                  <% feedbackSum += i.rating %>
+                  <% feedbackCount += 1.0 %>
+              <% end %>
+              <% if recipe.feedbacks.empty? %>
+                  No Ratings
+              <% else %>
+                  <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+              <% end %></td>
+          </tr>
+      <% end %>
+
+  <% end %>
 
 
 
 
 
-
-
-
-    <% end %>
-
-<% end %>
 
 </table>

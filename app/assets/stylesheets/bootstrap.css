@@ -41,7 +41,9 @@ html {
   -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    background-image: url(gray_fade.jpg);
+    background-size: cover;
+    margin: 0;
 }
 a:focus {
   outline: thin dotted;

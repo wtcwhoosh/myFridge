@@ -60,20 +60,24 @@
 <div class style="float:right; padding-right: 100px;">
   <h1>Recently Added</h1>
 
-
+  <table>
+    <tr>
+    <th>Name</th>
+    </tr>
   <% @recipes = Recipe.find(:all) %>
   <% @recipes.sort! { |a,b|b.created_at <=> a.created_at} %>
 
   <% num = 0%>
   <% @recipes.each do |recipe|%>
-  <%= recipe.name%><%= recipe.created_at %><br>
+  <tr>
+  <td><%= link_to recipe.name, recipe%><td/><td> added <%= time_ago_in_words(recipe.created_at)%><td/>
   <% num += 1 %>
   <%if num == 10 || num >= @recipes.count%>
   <% break %>
   <%end%>
-
+  <tr/>
   <%end%>
 
-
+  </table>
 </div>
 </div>
