@@ -7,7 +7,13 @@
 <% end %>
 <div class="row">
   <div class="col-sm-2 col-xs-2">
-    <%= image_tag @user.image_url, :class=>'profile-image' if @user.image? %>
+
+
+    <% if @user.image? %>
+        <%= image_tag @user.image_url, :class=>'profile-image'%>
+      <% else %>
+          <%= image_tag "user.png"%>
+    <% end %>
   </div>
   <div class="col-sm-4 col-xs-4">
     <span class='user-name'><%= @user.first_name + " " + @user.last_name %></span> <br />
@@ -33,9 +39,17 @@
       Average Feedback Rating: <%= number_with_precision(allRecipeSum.to_f / numOfFeedbacks, :precision => 2) %>
     </div>
   </div>
-
+    <span class='user-name'><%= "My Recipes" %></span> <br />
     <% if @user.recipes.empty? %>
-      No recipes for the user have been defined.
+      <table class="sortable">
+        <tr>
+          <th>Name</th>
+
+          <th>Ratings</th>
+          <th></th>
+          <th></th>
+        </tr>
+      <table/>
     <% else %>
         <table class="sortable">
         <tr>
@@ -54,12 +68,17 @@
       <% feedbackCount += 1.0 %>
       <% end %>
 
-      <td><%= image_tag 'drinkpic.png' %><%= link_to o.name, o %><td/>
+                <% if o.drinktype == "jjuice"%>
 
-      <td><% if o.feedbacks.empty? %>
-        No feedback.
-      <% else %>
-      <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+                    <td><%= image_tag 'redcup.png' %>
+                <% elsif o.drinktype == "martini"%>
+                    <td><%= image_tag 'glass.png' %>
+                <% else%>
+                    <td><%= image_tag 'cocktail.png' %>
+                <%end%><%= link_to o.name, o %><td/>
+
+      <td><% if o.feedbacks.empty? %>No Ratings.<% else %>
+      <%=number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
       <% end %><td/>
       <% end %>
           <tr/>

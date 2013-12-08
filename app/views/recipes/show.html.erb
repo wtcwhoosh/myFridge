@@ -27,7 +27,7 @@
 </p>
 <p>
   <% if @recipe.feedbacks.empty? %>
-      No feedbacks have been given
+      No Reviews
   <% else %>
       <% @recipe.feedbacks.each do |o| %>
           <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />

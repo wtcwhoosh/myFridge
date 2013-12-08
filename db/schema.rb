@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131205000636) do
+ActiveRecord::Schema.define(:version => 20131207195615) do
 
   create_table "drinkabilities", :force => true do |t|
     t.string   "name"
@@ -71,10 +71,8 @@ ActiveRecord::Schema.define(:version => 20131205000636) do
   end
 
   create_table "ingredients", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string "name"
+    t.string "description"
   end
 
   create_table "recipe_ingredients", :force => true do |t|
@@ -99,6 +97,8 @@ ActiveRecord::Schema.define(:version => 20131205000636) do
     t.datetime "updated_at",                      :null => false
     t.integer  "user_id"
     t.integer  "recipe_looper_id", :default => 1
+    t.string   "type"
+    t.string   "drinktype"
   end
 
   create_table "tastes", :force => true do |t|

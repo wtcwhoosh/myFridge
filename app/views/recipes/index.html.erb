@@ -1,10 +1,15 @@
-<h1>Drink Recipes</h1>
+
+<div class="container-fluid">
+ <div class style="float:left";>
+  <h1>Drink Recipes</h1>
+
+
+
 <% if flash[:error] %>
     <div class="alert alert-danger">
       <%= flash[:error] %>
     </div>
 <% end %>
-
 
 <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search recipes" %>
@@ -16,7 +21,6 @@
 
   <tr>
     <th>Name</th>
-
     <th>Ratings</th>
     <th></th>
     <th></th>
@@ -24,7 +28,15 @@
 
 <% @recipes.each do |recipe| %>
   <tr>
-    <td><%= image_tag 'drinkpic.png' %><%= link_to recipe.name, recipe %></td>
+    <% if recipe.drinktype == "jjuice"%>
+
+    <td><%= image_tag 'redcup.png' %>
+    <% elsif recipe.drinktype == "martini"%>
+        <td><%= image_tag 'glass.png' %>
+    <% else%>
+        <td><%= image_tag 'cocktail.png' %>
+    <%end%>
+    <%= link_to recipe.name, recipe %></td>
     <td><% feedbackSum = 0.0 %>
       <% feedbackCount = 0.0 %>
       <% recipe.feedbacks.each do |i| %>
@@ -33,7 +45,7 @@
       <% end %>
 
       <% if recipe.feedbacks.empty? %>
-          No feedback
+          No Ratings
       <% else %>
           <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
       <% end %></td>
@@ -41,7 +53,27 @@
   </tr>
 <% end %>
 </table>
-
 <br />
+</div>
 
 
+<div class style="float:right; padding-right: 100px;">
+  <h1>Recently Added</h1>
+
+
+  <% @recipes = Recipe.find(:all) %>
+  <% @recipes.sort! { |a,b|b.created_at <=> a.created_at} %>
+
+  <% num = 0%>
+  <% @recipes.each do |recipe|%>
+  <%= recipe.name%><%= recipe.created_at %><br>
+  <% num += 1 %>
+  <%if num == 10 || num >= @recipes.count%>
+  <% break %>
+  <%end%>
+
+  <%end%>
+
+
+</div>
+</div>

@@ -4,3 +4,8 @@
 remove_fields = (link) ->
   $(link).previous("input[type=hidden]").value = "1"
   $(link).up(".fields").hide()
+
+jQuery ->
+  $('#recipe_ingredient_ingredient_name').autocomplete
+    source: $('#recipe_ingredient_ingredient_name').data('autocomplete-source')
+

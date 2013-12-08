@@ -22,12 +22,17 @@
       <%= f.text_field :name %>
     </div>
     <br>
+
+    <b>Type of drink:</b> <br/>
+    <%=  f.radio_button :drinktype, 'jjuice'%><%= f.label "drinktype_jjuice", (image_tag 'redcup.png') %>
+    <%=  f.radio_button :drinktype, 'ctail'%><%= f.label "drinktype_ctail", (image_tag 'cocktail.png') %>
+    <%=  f.radio_button :drinktype, 'martini'%><%= f.label "drinktype_martini", (image_tag 'glass.png') %>
+    <br>
+
     <b>Ingredient:</b>
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= render 'recipe_ingredient_fields', :f => build %>
     <% end %>
-
-    <br>
     <b><%= link_to_add_fields "Add More Ingredients", f, :recipe_ingredients %></b>
     <div class="field">
 

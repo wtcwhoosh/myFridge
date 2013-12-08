@@ -1,7 +1,8 @@
 <table class="sortable">
   <tr>
-    <th><%="name" %></th>
-    <th><%="rating" %></th>
+    <th><%="Name" %></th>
+    <th><%="Rating" %></th>
+
   </tr>
 
 
@@ -30,7 +31,14 @@
 
 
               <tr>
-                <td><%= link_to recipe.name, recipe %></td>
+               <% if recipe.drinktype == "jjuice"%>
+
+                    <td><%= image_tag 'redcup.png' %>
+                <% elsif recipe.drinktype == "martini"%>
+                    <td><%= image_tag 'glass.png' %>
+                <% else%>
+                    <td><%= image_tag 'cocktail.png' %>
+                <%end%><%= link_to recipe.name, recipe %></td>
                 <td><% feedbackSum = 0.0 %>
                   <% feedbackCount = 0.0 %>
                   <% recipe.feedbacks.each do |i| %>
@@ -39,10 +47,11 @@
                   <% end %>
 
                   <% if recipe.feedbacks.empty? %>
-                      No feedback
+                      No Ratings
                   <% else %>
                       <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
                   <% end %></td>
+
               </tr>
 
 

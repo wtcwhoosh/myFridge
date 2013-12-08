@@ -12,3 +12,7 @@ jQuery ->
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
+
+  $('#recipe_ingredient_name').autocomplete
+    source: $('#recipe_ingredient_name').data('autocomplete-source')
+
