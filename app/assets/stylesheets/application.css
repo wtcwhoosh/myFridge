@@ -14,8 +14,7 @@
  */
 /* Sortable tables */
 table.sortable thead {
-    background-color:#eee;
-    color:#666666;
+    background-color:#fff;
     font-weight: bold;
     cursor: default;
 }

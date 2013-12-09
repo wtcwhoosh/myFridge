@@ -1,7 +1,6 @@
 body {
-    padding-top: 53px;
     color: #404040;
-    background-color: #FFFFFF;
+    background-color: #CF3F3F;
 }
 
 .starter-template {
@@ -173,10 +172,6 @@ h3 {
     border-bottom-style: solid;
 }
 
-.navbar
-{
-    margin-bottom: 0px;
-}
 
 .top-space
 {

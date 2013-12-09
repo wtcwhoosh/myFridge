@@ -1,83 +1,87 @@
 
-<div class="container-fluid">
- <div class style="float:left";>
-  <h1>Drink Recipes</h1>
+<div class="container-fluid wrapper">
+
+  <div class style="float:left";>
+  <div class="well">
+    <h1>Drink Recipes</h1>
 
 
 
-<% if flash[:error] %>
-    <div class="alert alert-danger">
-      <%= flash[:error] %>
-    </div>
-<% end %>
+    <% if flash[:error] %>
+        <div class="alert alert-danger">
+          <%= flash[:error] %>
+        </div>
+    <% end %>
 
-<%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search recipes" %>
-    <%= submit_tag "Search" %>
-<% end %>
+    <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search recipes" %>
+        <%= submit_tag "Search" %>
+    <% end %>
 
-<table class="sortable">
+    <table class="sortable">
 
 
-  <tr>
-    <th>Name</th>
-    <th>Ratings</th>
-    <th></th>
-    <th></th>
-  </tr>
+      <tr>
+        <th>Name</th>
+        <th>Ratings</th>
+        <th></th>
+        <th></th>
+      </tr>
 
-<% @recipes.each do |recipe| %>
-  <tr>
-    <% if recipe.drinktype == "jjuice"%>
+      <% @recipes.each do |recipe| %>
+          <tr>
+            <% if recipe.drinktype == "jjuice"%>
 
-    <td><%= image_tag 'redcup.png' %>
-    <% elsif recipe.drinktype == "martini"%>
-        <td><%= image_tag 'glass.png' %>
-    <% else%>
-        <td><%= image_tag 'cocktail.png' %>
-    <%end%>
-    <%= link_to recipe.name, recipe %></td>
-    <td><% feedbackSum = 0.0 %>
-      <% feedbackCount = 0.0 %>
-      <% recipe.feedbacks.each do |i| %>
-          <% feedbackSum += i.rating %>
-          <% feedbackCount += 1.0 %>
+                <td><%= image_tag 'redcup.png' %>
+            <% elsif recipe.drinktype == "martini"%>
+                <td><%= image_tag 'glass.png' %>
+            <% else%>
+                <td><%= image_tag 'cocktail.png' %>
+            <%end%>
+            <%= link_to recipe.name, recipe %></td>
+            <td><% feedbackSum = 0.0 %>
+              <% feedbackCount = 0.0 %>
+              <% recipe.feedbacks.each do |i| %>
+                  <% feedbackSum += i.rating %>
+                  <% feedbackCount += 1.0 %>
+              <% end %>
+
+              <% if recipe.feedbacks.empty? %>
+                  No Ratings
+              <% else %>
+                  <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
+              <% end %></td>
+
+          </tr>
       <% end %>
+    </table>
+    <br />
+  </div>
 
-      <% if recipe.feedbacks.empty? %>
-          No Ratings
-      <% else %>
-          <%= number_with_precision(feedbackSum/feedbackCount, :precision => 2)%>
-      <% end %></td>
-
-  </tr>
-<% end %>
-</table>
-<br />
 </div>
+<div class style="float:right;">
+  <div class="well">
+    <h1>Recently Added</h1>
 
+    <table>
+      <tr>
+        <th>Name</th>
+      </tr>
+      <% @recipes = Recipe.find(:all) %>
+      <% @recipes.sort! { |a,b|b.created_at <=> a.created_at} %>
 
-<div class style="float:right; padding-right: 100px;">
-  <h1>Recently Added</h1>
+      <% num = 0%>
+      <% @recipes.each do |recipe|%>
+          <tr>
+            <td><%= link_to recipe.name, recipe%><td/><td> added <%= time_ago_in_words(recipe.created_at)%><td/>
+            <% num += 1 %>
+            <%if num == 10 || num >= @recipes.count%>
+                <% break %>
+            <%end%>
+          <tr/>
+      <%end%>
 
-  <table>
-    <tr>
-    <th>Name</th>
-    </tr>
-  <% @recipes = Recipe.find(:all) %>
-  <% @recipes.sort! { |a,b|b.created_at <=> a.created_at} %>
-
-  <% num = 0%>
-  <% @recipes.each do |recipe|%>
-  <tr>
-  <td><%= link_to recipe.name, recipe%><td/><td> added <%= time_ago_in_words(recipe.created_at)%><td/>
-  <% num += 1 %>
-  <%if num == 10 || num >= @recipes.count%>
-  <% break %>
-  <%end%>
-  <tr/>
-  <%end%>
-
-  </table>
+    </table>
+  </div>
 </div>
 </div>

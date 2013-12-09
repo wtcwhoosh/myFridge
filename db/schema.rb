@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131207195615) do
+ActiveRecord::Schema.define(:version => 20131209170223) do
 
   create_table "drinkabilities", :force => true do |t|
     t.string   "name"
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20131207195615) do
     t.integer  "recipe_looper_id", :default => 1
     t.string   "type"
     t.string   "drinktype"
+    t.integer  "like"
   end
 
   create_table "tastes", :force => true do |t|

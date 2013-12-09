@@ -4,16 +4,16 @@
     <list default="true" id="77ea8337-9a0e-45db-914e-6846da1ee1aa" name="Default" comment="" />
     <ignored path="myFridge.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/_form.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386454156766" ignored="false" />
+    <file path="/_form.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386620147672" ignored="false" />
     <file path="/ingredients_controller.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386108834118" ignored="false" />
     <file path="/fridge_ingredients.js.coffee" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386264437625" ignored="false" />
     <file path="/index.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386526623455" ignored="false" />
     <file path="/recipes_controller.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386195860925" ignored="false" />
-    <file path="/recipe.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386446309663" ignored="false" />
+    <file path="/recipe.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386538310588" ignored="false" />
     <file path="/application.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386455873301" ignored="false" />
-    <file path="/show.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386452090071" ignored="false" />
+    <file path="/show.html.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386623461614" ignored="false" />
     <file path="/favorite.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386201010537" ignored="false" />
-    <file path="/user.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386202055230" ignored="false" />
+    <file path="/user.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386538236544" ignored="false" />
     <file path="/Gemfile" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386201574981" ignored="false" />
     <file path="/fridge_ingredients_controller.rb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386209049048" ignored="false" />
     <file path="/_youshouldcheckout.erb" changelist="77ea8337-9a0e-45db-914e-6846da1ee1aa" time="1386530582706" ignored="false" />
@@ -43,28 +43,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fridge_ingredient.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/fridge_ingredient.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="25" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_fridge_ingredients_list.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_fridge_ingredients_list.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="86" selection-start="7" selection-end="7" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/show.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="116" column="90" selection-start="3433" selection-end="3433" vertical-scroll-proportion="-5.5833335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="43" selection-start="842" selection-end="844" vertical-scroll-proportion="-5.451613">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5927" column="78" selection-start="126636" selection-end="126636" vertical-scroll-proportion="-7.903226">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scaffolds.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="58" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myFridge.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/myFridge.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="230" column="1" selection-start="3422" selection-end="3422" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,16 +102,16 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="26" column="6" selection-start="489" selection-end="489" vertical-scroll-proportion="-16.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="16" selection-start="1392" selection-end="1410" vertical-scroll-proportion="-12.625">
+            <state line="19" column="10" selection-start="462" selection-end="462" vertical-scroll-proportion="-7.5">
               <folding />
             </state>
           </provider>
@@ -91,33 +120,27 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/recipes/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="79" selection-start="698" selection-end="707" vertical-scroll-proportion="-11.791667">
+            <state line="33" column="76" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-19.958334">
               <folding>
-                <marker date="1386454411818" expanded="true" signature="100:374" placeholder="..." />
-                <marker date="1386454411818" expanded="true" signature="224:359" placeholder="..." />
-                <marker date="1386454411818" expanded="true" signature="397:440" placeholder="..." />
-                <marker date="1386454411818" expanded="true" signature="501:575" placeholder="..." />
-                <marker date="1386454411818" expanded="true" signature="1208:1327" placeholder="..." />
-                <marker date="1386454411818" expanded="true" signature="1355:1388" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="100:374" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="224:359" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="397:440" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="501:575" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="1216:1335" placeholder="..." />
+                <marker date="1386620148926" expanded="true" signature="1363:1396" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_youshouldcheckout.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_youshouldcheckout.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="22" selection-start="769" selection-end="769" vertical-scroll-proportion="0.9415584">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ingredient.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/ingredient.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="86" column="6" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.93318486">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,28 +155,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/fridge_ingredients/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/database.yml" />
-        <option value="$PROJECT_DIR$/app/models/recipe.rb" />
-        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/recipes/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/fridge_ingredients/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/recipes.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/recipe_ingredients.js.coffee" />
-        <option value="$PROJECT_DIR$/app/models/recipe_ingredient.rb" />
         <option value="$PROJECT_DIR$/app/views/recipes/_recipe_ingredient_fields.erb" />
-        <option value="$PROJECT_DIR$/app/views/recipes/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/recipes/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/_fridge_ingredients_list.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_youshouldcheckout.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/app/models/user.rb" />
+        <option value="$PROJECT_DIR$/app/models/recipe.rb" />
+        <option value="$PROJECT_DIR$/app/views/recipes/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/recipes/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/myFridge.css" />
+        <option value="$PROJECT_DIR$/app/views/fridge_ingredients/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/recipes/index.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="67" />
-    <option name="y" value="635" />
+    <option name="x" value="55" />
+    <option name="y" value="480" />
     <option name="width" value="1156" />
     <option name="height" value="697" />
   </component>
@@ -183,6 +206,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -440,6 +464,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myFridge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myFridge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -512,7 +554,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -655,14 +696,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="635" width="1156" height="697" extended-state="0" />
-    <editor active="false" />
+    <frame x="55" y="480" width="1156" height="697" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29528984" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3143116" sideWeight="0.6713781" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -738,14 +779,7 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -759,91 +793,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="518" selection-end="518" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131207195615_add_drinktype_to_recipes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="63" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="79" selection-start="698" selection-end="707" vertical-scroll-proportion="-11.791667">
-          <folding>
-            <marker date="1386454411818" expanded="true" signature="100:374" placeholder="..." />
-            <marker date="1386454411818" expanded="true" signature="224:359" placeholder="..." />
-            <marker date="1386454411818" expanded="true" signature="397:440" placeholder="..." />
-            <marker date="1386454411818" expanded="true" signature="501:575" placeholder="..." />
-            <marker date="1386454411818" expanded="true" signature="1208:1327" placeholder="..." />
-            <marker date="1386454411818" expanded="true" signature="1355:1388" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="17" selection-start="764" selection-end="764" vertical-scroll-proportion="-18.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="87" selection-start="753" selection-end="753" vertical-scroll-proportion="-6.419355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/fridge_ingredient.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_fridge_ingredients_list.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="86" selection-start="7" selection-end="7" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="16" selection-start="1392" selection-end="1410" vertical-scroll-proportion="-12.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/ingredient.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -852,8 +809,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_youshouldcheckout.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="22" selection-start="769" selection-end="769" vertical-scroll-proportion="0.9415584">
+        <state line="39" column="16" selection-start="555" selection-end="1070" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/images/gray_fade.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="43" selection-start="842" selection-end="844" vertical-scroll-proportion="-5.451613">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="76" selection-start="1095" selection-end="1095" vertical-scroll-proportion="-19.958334">
+          <folding>
+            <marker date="1386620148926" expanded="true" signature="100:374" placeholder="..." />
+            <marker date="1386620148926" expanded="true" signature="224:359" placeholder="..." />
+            <marker date="1386620148926" expanded="true" signature="397:440" placeholder="..." />
+            <marker date="1386620148926" expanded="true" signature="501:575" placeholder="..." />
+            <marker date="1386620148926" expanded="true" signature="1216:1335" placeholder="..." />
+            <marker date="1386620148926" expanded="true" signature="1363:1396" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="90" selection-start="3433" selection-end="3433" vertical-scroll-proportion="-5.5833335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="462" selection-end="462" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5927" column="78" selection-start="126636" selection-end="126636" vertical-scroll-proportion="-7.903226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="91" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="58" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/myFridge.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="1" selection-start="3422" selection-end="3422" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/fridge_ingredients/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="6" selection-start="489" selection-end="489" vertical-scroll-proportion="-16.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="6" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.93318486">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

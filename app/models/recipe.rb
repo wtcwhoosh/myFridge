@@ -2,7 +2,7 @@ class Recipe < ActiveRecord::Base
   attr_accessible :instruction, :name, :recipe_ingredients_attributes, :drinktype
   attr_accessible :user_id
   attr_accessible :recipe_looper_id
-
+  has_many :favorites
   belongs_to :user
   has_many :feedbacks, :dependent => :destroy
   has_many :ingredients, :through => :recipe_ingredients

@@ -16,12 +16,15 @@
     <% end %>
   </div>
   <div class="col-sm-4 col-xs-4">
-    <span class='user-name'><%= @user.first_name + " " + @user.last_name %></span> <br />
-    <%= @user.location %> <br />
+    <span class='user-name'><%= @user.name %></span> <br />
+    Name: <span class='user-name'><%= @user.first_name + " " + @user.last_name %></span> <br />
+    Location: <%= @user.location %> <br />
+    <% if @user == User.find(session[:user_id]) %>
+    <%= link_to "Edit Profile", edit_user_path(@user) %><br>
+    <% end %>
     <% if @user == User.find(session[:user_id]) %>
       <%= link_to 'Go to Your Fridge', new_fridge_ingredient_path %>
     <% else %>
-      <p>Ask to share users fridge</p>
     <% end %>
     <div class="metadata-text">
       Number of Recipes: <%= @user.recipes.count %> <br>
@@ -36,7 +39,7 @@
       <%end%>
       <% allRecipeSum += recipeSum %>
       <%end%>
-      Average Feedback Rating: <%= number_with_precision(allRecipeSum.to_f / numOfFeedbacks, :precision => 2) %>
+      Average Review Rating: <%= number_with_precision(allRecipeSum.to_f / numOfFeedbacks, :precision => 2) %>
     </div>
   </div>
     <span class='user-name'><%= "My Recipes" %></span> <br />
