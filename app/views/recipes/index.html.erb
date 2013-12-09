@@ -73,7 +73,13 @@
       <% num = 0%>
       <% @recipes.each do |recipe|%>
           <tr>
-            <td><%= link_to recipe.name, recipe%><td/><td> added <%= time_ago_in_words(recipe.created_at)%><td/>
+            <% if recipe.drinktype == "jjuice"%>
+                <td><%= image_tag 'redcup.png' %>
+            <% elsif recipe.drinktype == "martini"%>
+                <td><%= image_tag 'glass.png' %>
+            <% else%>
+                <td><%= image_tag 'cocktail.png' %>
+            <%end%><%= link_to recipe.name, recipe%><td/><td> added <%= time_ago_in_words(recipe.created_at)%><td/>
             <% num += 1 %>
             <%if num == 10 || num >= @recipes.count%>
                 <% break %>

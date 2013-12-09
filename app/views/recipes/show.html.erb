@@ -1,20 +1,24 @@
-<p id="notice"><%= notice %></p>
+
+
+    <div class="container-fluid">
+      <div class="wrapper">
+<p>
+<div class= "col-xs-6 col-s-6 col-l-6">
+<div class="well">
+ <h1> <%= @recipe.name %></h1>
 
 <p>
-  <b>Name:</b>
-  <%= @recipe.name %>
+
+ Created By: <%= link_to @recipe.user.name, @recipe.user %>
 </p>
+
 <p>
-  <b>By:</b>
-  <%= link_to @recipe.user.name, @recipe.user %>
-</p>
-<p>
-  <b>Ingredients:</b><br>
+  <h1>Ingredients:</h1><br>
   <% if @recipe.ingredients.empty? %>
       No ingredients for the question have been defined.
   <% else %>
   <% end %>
-</p>
+
 <% showRecipeIngredients = [] %>
 <% if @recipe.recipe_ingredients %>
     <% @recipe.recipe_ingredients.each do |recipe_ingredient| %>
@@ -24,23 +28,16 @@
         </ul>
     <% end %>
 <% end %>
-<p>
-  <b>Instructions:</b>
-  <%= @recipe.instruction %>
-</p>
-<p>
-  <% if @recipe.feedbacks.empty? %>
-      No Reviews
-  <% else %>
-      <% @recipe.feedbacks.each do |o| %>
-          <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />
-      <% end %>
-  <% end %>
-</p>
+    <h1>Instructions:</h1>
+    <%= @recipe.instruction %>
 
+  </div>
+  </div>
 
+<div class= "col-xs-6 col-s-6 col-l-6">
+  <div class="well">
 <% similarRecipes = [] %>
-You might want to check out <br>
+<h1>Similar Drinks</h1>
 <% @recipes = Recipe.find(:all) %>
 
 <% @recipes.each do |recipe| %>
@@ -107,9 +104,24 @@ You might want to check out <br>
 <% similarRecipesMap = Hash[similarRecipesMap.sort_by {|k,v| v}.reverse] %>
 <% loopStopCount = 0 %>
 <% leftOver = Hash.new %>
+
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+      </tr>
+
 <% similarRecipesMap.each do |recipe, rating| %>
+          <tr>
     <% if !rating.eql? "No Ratings" %>
-    <%= link_to recipe.name, recipe %> | <%= rating %> <br>
+    <% if recipe.drinktype == "jjuice"%>
+          <td><%= image_tag 'redcup.png' %>
+      <% elsif recipe.drinktype == "martini"%>
+          <td><%= image_tag 'glass.png' %>
+      <% else%>
+          <td><%= image_tag 'cocktail.png' %>
+      <%end%><%= link_to recipe.name, recipe %> <td/><%= rating %><td/>
     <% loopStopCount += 1 %>
     <% if loopStopCount == 10 %>
         <% break %>
@@ -117,19 +129,45 @@ You might want to check out <br>
     <% else %>
     <%leftOver[recipe] = rating %>
     <% end %>
+          <tr/>
     <% end %>
 <%if loopStopCount != 10 %>
     <% leftOver.each do |recipe, rating| %>
-        <%= link_to recipe.name, recipe %> | <%= rating %> <br>
+              <tr><% if recipe.drinktype == "jjuice"%>
+                    <td><%= image_tag 'redcup.png' %>
+                <% elsif recipe.drinktype == "martini"%>
+                    <td><%= image_tag 'glass.png' %>
+                <% else%>
+                    <td><%= image_tag 'cocktail.png' %>
+                <%end%><%= link_to recipe.name, recipe %><td/> <%= rating %> <td/>
         <% loopStopCount += 1 %>
         <% if loopStopCount == 10 %>
             <% break %>
         <% end %>
+           <tr/>
     <% end %>
 <% end %>
+        </table>
+  </div>
 
 
-<%= link_to 'Add Reviews', :controller => 'feedbacks', :action => 'new',
-            :recipe_id => @recipe.id %>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+
+  <div class="well">
+
+
+    <h1>Reviews</h1>
+    <%= link_to 'Add Review', :controller => 'feedbacks', :action => 'new',
+                :recipe_id => @recipe.id %>  <br>
+    <% if @recipe.feedbacks.empty? %>
+        No Reviews
+    <% else %>
+        <% @recipe.feedbacks.each do |o| %>
+            <b>Feedback: </b> Rating: <%= o.rating %> | <%= o.comment %> <br />
+        <% end %>
+    <% end %>
+
+</div>
+</div>
+
+  </div>
+        </div>
