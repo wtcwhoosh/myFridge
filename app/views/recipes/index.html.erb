@@ -30,14 +30,18 @@
 
       <% @recipes.each do |recipe| %>
           <tr>
-            <% if recipe.drinktype == "jjuice"%>
+            <% unless recipe.drinktype.empty? %>
+	    
+	    <% if recipe.drinktype == "juice" %>
 
                 <td><%= image_tag 'redcup.png' %>
             <% elsif recipe.drinktype == "martini"%>
-                <td><%= image_tag 'glass.png' %>
-            <% else%>
+                <
+		   td><%= image_tag 'glass.png' %>
+            <% else %>
                 <td><%= image_tag 'cocktail.png' %>
-            <%end%>
+            <% end %>
+	    <% end %>
             <%= link_to recipe.name, recipe %></td>
             <td><% feedbackSum = 0.0 %>
               <% feedbackCount = 0.0 %>

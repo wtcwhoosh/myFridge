@@ -50,7 +50,7 @@ class FridgeIngredientsController < ApplicationController
   # POST /fridge_ingredients.json
   def create
     @user = User.find(session[:user_id])
-    @fridge_ingredient = FridgeIngredient.new(params[:fridge_ingredient])
+    @fridge_ingredient = FridgeIngredient.new(fridge_ingredient_params)
 
     respond_to do |format|
       if @fridge_ingredient.save
@@ -69,7 +69,7 @@ class FridgeIngredientsController < ApplicationController
     @fridge_ingredient = FridgeIngredient.find(params[:id])
 
     respond_to do |format|
-      if @fridge_ingredient.update_attributes(params[:fridge_ingredient])
+      if @fridge_ingredient.update(fridge_ingredient_params)
         format.html { redirect_to @fridge_ingredient, notice: 'Fridge ingredient was successfully updated.' }
         format.json { head :no_content }
       else
@@ -99,5 +99,10 @@ class FridgeIngredientsController < ApplicationController
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
+
+  def fridge_ingredient_params
+    params.require(:fridge_ingredient).permit(:ingredient_id, :quantity, :user_id, :ingredient_name)
+  end
+
 
 end

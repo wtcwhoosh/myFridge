@@ -40,7 +40,7 @@ class RecipeLoopersController < ApplicationController
   # POST /recipe_loopers
   # POST /recipe_loopers.json
   def create
-    @recipe_looper = RecipeLooper.new(params[:recipe_looper])
+    @recipe_looper = RecipeLooper.new(recipe_looper_params)
 
     respond_to do |format|
       if @recipe_looper.save
@@ -59,7 +59,7 @@ class RecipeLoopersController < ApplicationController
     @recipe_looper = RecipeLooper.find(params[:id])
 
     respond_to do |format|
-      if @recipe_looper.update_attributes(params[:recipe_looper])
+      if @recipe_looper.update(recipe_looper_params)
         format.html { redirect_to @recipe_looper, notice: 'Recipe looper was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,11 @@ class RecipeLoopersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def recipe_looper_params
+    params.require.permit(:recipe_looper).permit(:name)
+  end
+
 end

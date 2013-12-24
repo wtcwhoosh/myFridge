@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MyFridge::Application.config.secret_token = '65f31065f31fcba7f14d26e41807cb17c52c9f4c9ba1d382204389c20cf23b55bffd6ebc31490083aa10683a2b2bb5d302f532121fbf7752c9ed834f77ac3ef6'
+MyFridge::Application.config.secret_key_base = '033d2beab2e52ca8846e8a8dfc9ff37585a574714f3e04baa909e8945fa056782b5a14db83fb86d33c605a218f26300ff3cdd12e04dbc2324b4a0d336e4ea486'

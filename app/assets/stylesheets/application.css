@@ -12,9 +12,10 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+
 /* Sortable tables */
 table.sortable thead {
-    background-color:#fff;
+    background-color: #fff;
     font-weight: bold;
     cursor: default;
 }

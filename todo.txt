@@ -1,0 +1,18 @@
+* December 24
+** Upgrade to Rails4
+   Follow Railscast using Future40b.com as a reference for Gemfile
+** Deploy to Cap on SeeMcCarthy.com
+   Create Droplet
+   Follow tutorial underneath deploy but use latest version of postgres
+** Chris Email Crew w/ Update and Question about drinktype
+   Website is up here is url
+   Here are my suggestions (aperitif is bad)
+   Start seeding the database with recipes and ingredients (Nick)
+   This is my plan for  drinktype
+* Deember 26
+** Set Up Facebook User Login
+   rails g destroy Scaffold user
+   Install Devise (immediately configure for facebook?)
+   Set up Omniauth
+   Login with your facebook
+   

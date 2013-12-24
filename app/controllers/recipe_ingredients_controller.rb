@@ -40,7 +40,7 @@ class RecipeIngredientsController < ApplicationController
   # POST /recipe_ingredients
   # POST /recipe_ingredients.json
   def create
-    @recipe_ingredient = RecipeIngredient.new(params[:recipe_ingredient])
+    @recipe_ingredient = RecipeIngredient.new(recipe_ingredient_params)
 
     respond_to do |format|
       if @recipe_ingredient.save
@@ -59,7 +59,7 @@ class RecipeIngredientsController < ApplicationController
     @recipe_ingredient = RecipeIngredient.find(params[:id])
 
     respond_to do |format|
-      if @recipe_ingredient.update_attributes(params[:recipe_ingredient])
+      if @recipe_ingredient.update(recipe_ingredient_params)
         format.html { redirect_to @recipe_ingredient, notice: 'Recipe ingredient was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,12 @@ class RecipeIngredientsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def recipe_ingredient_params
+    params.require(:recipe_ingredient).permit(:ingredient_id, :quantity, :recipe_id, :unit, :ingredient_name)
+  end
+
+
 end

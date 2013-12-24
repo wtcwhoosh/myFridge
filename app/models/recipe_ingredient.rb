@@ -1,6 +1,4 @@
 class RecipeIngredient < ActiveRecord::Base
-  attr_accessible :ingredient_id, :quantity, :recipe_id, :unit, :ingredient_name
-
   belongs_to :recipe
   belongs_to :ingredient
 
