@@ -9,10 +9,14 @@
    Here are my suggestions (aperitif is bad)
    Start seeding the database with recipes and ingredients (Nick)
    This is my plan for  drinktype
-* Deember 26
+* December 26
 ** Set Up Facebook User Login
+   Save show.html.erb code
    rails g destroy Scaffold user
    Install Devise (immediately configure for facebook?)
    Set up Omniauth
    Login with your facebook
    
+** Set Up Drink Type Model and Update Views
+   Create Model
+   Change Radio Buttons to a for each drink_type loop

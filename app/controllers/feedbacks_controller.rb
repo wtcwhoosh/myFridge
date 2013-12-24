@@ -42,7 +42,7 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks
   # POST /feedbacks.json
   def create
-    @feedback = Feedback.new(params[:feedback])
+    @feedback = Feedback.new(feedback_params)
 
     respond_to do |format|
       if @feedback.save
@@ -61,7 +61,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.find(params[:id])
 
     respond_to do |format|
-      if @feedback.update_attributes(params[:feedback])
+      if @feedback.update(feedback_params)
         format.html { redirect_to @feedback, notice: 'Feedback was successfully updated.' }
         format.json { head :no_content }
       else
@@ -82,4 +82,10 @@ class FeedbacksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def feedback_params
+    params.require(:feedback).permit(:comment, :rating, :recipe_id, :taste_id, :easiness_id, :drinkability_id)
+
 end

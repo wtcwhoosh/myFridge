@@ -1,5 +1,4 @@
 class Feedback < ActiveRecord::Base
-  attr_accessible :comment, :rating, :recipe_id, :taste_id, :easiness_id, :drinkability_id
   belongs_to :recipe
   belongs_to :taste
   belongs_to :easiness

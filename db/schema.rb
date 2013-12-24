@@ -9,33 +9,36 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203002323) do
+ActiveRecord::Schema.define(version: 20131224191749) do
 
-  create_table "drinkabilities", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "drinkabilities", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "easinesses", :force => true do |t|
+  create_table "easinesses", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "feedback_ratings", :force => true do |t|
+  create_table "feedback_ratings", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "feedbacks", :force => true do |t|
+  create_table "feedbacks", force: true do |t|
     t.integer  "recipe_id"
     t.text     "comment"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "easiness"
     t.float    "rating"
     t.integer  "taste_id"
@@ -43,82 +46,83 @@ ActiveRecord::Schema.define(:version => 20131203002323) do
     t.integer  "easiness_id"
   end
 
-  create_table "foods", :force => true do |t|
+  create_table "foods", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "fridge_ingredients", :force => true do |t|
+  create_table "fridge_ingredients", force: true do |t|
     t.integer  "user_id"
     t.integer  "ingredient_id"
     t.string   "quantity"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  create_table "fridges", :force => true do |t|
+  create_table "fridges", force: true do |t|
     t.integer  "user_id"
     t.integer  "ingredient_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  create_table "ingredients", :force => true do |t|
+  create_table "ingredients", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "recipe_ingredients", :force => true do |t|
+  create_table "recipe_ingredients", force: true do |t|
     t.integer  "recipe_id"
     t.integer  "ingredient_id"
     t.string   "quantity"
     t.string   "unit"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  create_table "recipe_loopers", :force => true do |t|
+  create_table "recipe_loopers", force: true do |t|
     t.integer  "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "recipes", :force => true do |t|
+  create_table "recipes", force: true do |t|
     t.string   "name"
     t.text     "instruction"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "user_id"
-    t.integer  "recipe_looper_id", :default => 1
+    t.integer  "recipe_looper_id", default: 1
+    t.string   "drinktype"
   end
 
-  create_table "tastes", :force => true do |t|
+  create_table "tastes", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "types", :force => true do |t|
+  create_table "types", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
     t.string   "password"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "image"
     t.string   "gender"
     t.string   "location"
-    t.integer  "recipe_looper_id", :default => 1
+    t.integer  "recipe_looper_id", default: 1
   end
 
 end
