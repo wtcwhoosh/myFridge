@@ -21,10 +21,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.search(params[:search])
     #@recipes = Recipe.all
 
-    #respond_to do |format|
+    # respond_to do |format|
     #  format.html # index.html.erb
     #  format.json { render json: @recipes }
-    #end
+    # end
   end
 
   # GET /recipes/1

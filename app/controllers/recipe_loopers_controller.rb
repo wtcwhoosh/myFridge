@@ -84,7 +84,7 @@ class RecipeLoopersController < ApplicationController
 private
 
   def recipe_looper_params
-    params.require.permit(:recipe_looper).permit(:name)
+    params.require(:recipe_looper).permit(:name)
   end
 
 end

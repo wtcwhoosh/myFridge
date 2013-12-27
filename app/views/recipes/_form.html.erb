@@ -12,7 +12,7 @@
     <% end %>
 
     <p>
-      By <%= @recipe.user.name %>
+      By <%= @recipe.user.name if @recipe.user %>
     </p>
     <%= f.hidden_field :user_id %>
 

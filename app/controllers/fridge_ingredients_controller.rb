@@ -7,7 +7,7 @@ class FridgeIngredientsController < ApplicationController
 
 
   def index
-    @user = User.find(session[:user_id])
+    @user = current_user
     @fridge_ingredients = FridgeIngredient.all
     @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
     respond_to do |format|
@@ -19,7 +19,7 @@ class FridgeIngredientsController < ApplicationController
   # GET /fridge_ingredients/1
   # GET /fridge_ingredients/1.json
   def show
-    @user = User.find(session[:user_id])
+    @user = current_user
     @fridge_ingredient = FridgeIngredient.find(params[:id])
 
     respond_to do |format|
@@ -31,7 +31,7 @@ class FridgeIngredientsController < ApplicationController
   # GET /fridge_ingredients/new
   # GET /fridge_ingredients/new.json
   def new
-    @user = User.find(session[:user_id])
+    @user = current_user
     @fridge_ingredient = FridgeIngredient.new
     @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
 
@@ -49,7 +49,7 @@ class FridgeIngredientsController < ApplicationController
   # POST /fridge_ingredients
   # POST /fridge_ingredients.json
   def create
-    @user = User.find(session[:user_id])
+    @user = current_user
     @fridge_ingredient = FridgeIngredient.new(fridge_ingredient_params)
 
     respond_to do |format|

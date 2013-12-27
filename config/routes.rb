@@ -1,14 +1,9 @@
 MyFridge::Application.routes.draw do
+  devise_for :users
   resources :recipe_loopers
 
 
-  resources :easinesses
 
-
-  resources :drinkabilities
-
-
-  resources :tastes
    
   resources :fridge_ingredients
 
@@ -23,13 +18,10 @@ MyFridge::Application.routes.draw do
   resources :feedbacks
 
 
-  get "auth/login"
+ 
 
-  get "auth/logout"
+ 
 
-  post "auth/login"
-
-  resources :users
 
 
   resources :types

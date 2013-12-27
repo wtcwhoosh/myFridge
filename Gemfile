@@ -15,6 +15,12 @@ gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'   
 gem "jquery-ui-rails"
 
+
+# Devise and Omniauth
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
 gem 'carrierwave'
