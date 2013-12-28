@@ -33,7 +33,7 @@ class FridgeIngredientsController < ApplicationController
   def new
     @user = current_user
     @fridge_ingredient = FridgeIngredient.new
-    @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
+#    @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # new.html.erb
