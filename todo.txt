@@ -9,14 +9,20 @@
    Here are my suggestions (aperitif is bad)
    Start seeding the database with recipes and ingredients (Nick)
    This is my plan for  drinktype
-* December 26
+* December 28
+** Fix Bugs
+   Recipe Ingredients aren't saving (strong_parameters probably)
 ** Set Up Facebook User Login
-   Save show.html.erb code
-   rails g destroy Scaffold user
-   Install Devise (immediately configure for facebook?)
-   Set up Omniauth
-   Login with your facebook
+   Set up environment keys for facebook login (stack overflow question)
    
+
+* IN THE FUTURE
+** Do Recipe Looper in a Ruby Way
+** Add Images
+** Fix Styling (tone it down a bit)
 ** Set Up Drink Type Model and Update Views
    Create Model
    Change Radio Buttons to a for each drink_type loop
+   
+** Add/Fix review functionality
+
