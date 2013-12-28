@@ -87,5 +87,5 @@ private
 
   def feedback_params
     params.require(:feedback).permit(:comment, :rating, :recipe_id, :taste_id, :easiness_id, :drinkability_id)
-
+  end
 end
