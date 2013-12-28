@@ -31,5 +31,4 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
-# Stupid Gem I can't wait to get rid of
-gem 'protected_attributes'
+
