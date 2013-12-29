@@ -9,7 +9,7 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
 
-  config.omniauth :facebook, "727270763950828", "4a526d2c0ca23080d5d7616b9705b98f", scope: "email,user_about_me"
+  config.omniauth :facebook, "727270763950828", "4a526d2c0ca23080d5d7616b9705b98f", scope: "email"
   
 
 
