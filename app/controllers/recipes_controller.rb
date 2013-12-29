@@ -104,8 +104,8 @@ class RecipesController < ApplicationController
 private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :instruction, :recipe_ingredient_attributes, :drinktype, :user_id,
-                                   :recipe_looper_id)
+    params.require(:recipe).permit(:name, :instruction, :drinktype, :user_id,
+                                   :recipe_looper_id, recipe_ingredients_attributes: [ :ingredient_id, :recipe_id, :_destroy ] )
   end
 
 end
