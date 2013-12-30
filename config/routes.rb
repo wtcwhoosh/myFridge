@@ -1,9 +1,11 @@
 MyFridge::Application.routes.draw do
-  devise_for :users  
+  
+  devise_for :users, :controllers => {
+    registrations: "users/registrations", 
+    passwords: "users/passwords", 
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }  
 
-  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  match 'auth/failure', to: redirect('/'), via: [:get, :post]
-  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   
   resources :recipe_loopers 
    
