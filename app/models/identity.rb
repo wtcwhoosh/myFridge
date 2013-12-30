@@ -1,18 +1,8 @@
 class Identity
 
-  belongs_to :user
+  belongs_to :user, parent_class: User 
   
-  field :uid, type: String
-  field :provider, type: String
-  field :token, type: String
-  field :secret, type: String
-  field :expires_at, type: DateTime
-
-  field :email, type: String
-  field :image, type: String
-  field :nickname, type: String
-  field :first_name, type: String
-  field :last_name, type: String
+  
 
   def self.from_omniauth(auth)
     identity = where(auth.slice(:provider, :uid)).first_or_create do |identity|
