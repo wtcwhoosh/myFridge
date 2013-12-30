@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+  
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
                          )
     end
     user
-  end    
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -31,4 +32,24 @@ class User < ActiveRecord::Base
     end
   end
 
-end
+
+    # Password not required when using omniauth
+    def password_required?
+      super && identities.empty?
+    end
+
+    # Confirmation not required when using omniauth
+    def confirmation_required?
+      super && identities.empty?
+    end
+
+    def update_with_password(params, *options)
+      if encrypted_password.blank?
+        update_attributes(params, *options)
+      else
+        super
+      end
+    end
+  end
+
+
