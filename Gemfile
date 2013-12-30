@@ -20,6 +20,7 @@ gem "jquery-ui-rails"
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'oauth2'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby

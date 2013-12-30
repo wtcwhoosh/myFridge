@@ -2,64 +2,24 @@ class User < ActiveRecord::Base
   has_many :recipes, :dependent => :destroy
   has_many :fridge_ingredients
   has_many :ingredients, :through => :fridge_ingredients
-  has_many :identities
   belongs_to :recipe_looper
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
-  
+         :recoverable, :rememberable, :trackable, :validatable
+         # :omniauthable, :omniauth_providers => [:facebook]
 
   
-
-
-
-
-
-
-
-
-  # def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-  #   user = User.where(:provider => auth.provider, :uid => auth.uid).first
-  #   unless user
-  #     user = User.create(name:auth.extra.raw_info.name,
-  #                        provider:auth.provider,
-  #                        uid:auth.uid,
-  #                        email:auth.info.email,
-  #                        password:Devise.friendly_token[0,20]
-  #                        )
-  #   end
-  #   user
-  # end
-
-  # #def self.new_with_session(params, session)
-  #  # super.tap do |user|
-  #   #  if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-  #    #   user.email = data["email"] if user.email.blank?
-  #    # end
-  #   end
-  # end
-
-
-    # Password not required when using omniauth
-    def password_required?
-      super && identities.empty?
-    end
-
-    # Confirmation not required when using omniauth
-    def confirmation_required?
-      super && identities.empty?
-    end
-
-    def update_with_password(params, *options)
-      if encrypted_password.blank?
-        update_attributes(params, *options)
-      else
-        super
-      end
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
     end
   end
-
+end
 

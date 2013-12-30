@@ -196,6 +196,7 @@ DEPENDENCIES
   jquery-ui-rails
   less-rails
   make_flaggable!
+  oauth2
   omniauth
   omniauth-facebook
   pg
