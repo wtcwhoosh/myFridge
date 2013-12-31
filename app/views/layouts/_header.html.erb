@@ -22,24 +22,24 @@
 
       <ul class="nav navbar-nav navbar-right">
 
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%#= current_user.email %>
+                <%= current_user.email %>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%#= link_to 'profile', user_path(user) %></li>
-                <li><%#= link_to 'logout', destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
-        <%# else %>
-            <li> <%#= link_to 'create an account', user_registration_path %>
-            <%#= link_to 'login', user_session_path  %></li>
+        <% else %>
+            <li> <%= link_to 'create an account', user_registration_path %>
+            <%= link_to 'login', user_session_path  %></li>
 
 
 
-        <%# end %>
+        <% end %>
       </ul>
 
 
