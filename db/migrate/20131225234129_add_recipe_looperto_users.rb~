@@ -1,4 +1,0 @@
-class AddRecipeLoopertoUsers < ActiveRecord::Migration
-  def change
-  end
-end
