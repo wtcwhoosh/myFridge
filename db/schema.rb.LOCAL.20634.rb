@@ -98,9 +98,8 @@ ActiveRecord::Schema.define(version: 20131230225722) do
   create_table "recipes", force: true do |t|
     t.string   "name"
     t.text     "instruction"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "recipe_looper_id", default: 1
     t.string   "drinktype"
   end

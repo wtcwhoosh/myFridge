@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'rails_12factor'
@@ -19,7 +19,7 @@ gem "jquery-ui-rails"
 # Devise and Omniauth
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4'
 gem 'oauth2'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
