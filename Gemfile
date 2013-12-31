@@ -19,7 +19,7 @@ gem "jquery-ui-rails"
 # Devise and Omniauth
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 gem 'oauth2'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
