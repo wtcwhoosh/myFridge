@@ -1,6 +1,7 @@
 MyFridge::Application.routes.draw do
    
 
+  devise_for :users
   resources :recipe_loopers 
    
   resources :fridge_ingredients

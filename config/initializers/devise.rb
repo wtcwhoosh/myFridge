@@ -4,15 +4,11 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '6fff4ad4e6751916c293b798b6feffd241f6437c03ed3d166d3774f08c65c86293280c60af9cfb257f2d6f3e7c1b7423078af6fc8ddcc7dc30bfdce352e70a7e'
-  
+  config.secret_key = 'db653720cd3d1638449d0eef0e54e921bbe0f5a9177f3d81c0adf11d883a761343ed478057da80236c66fc08a7f2fb269a07037f6386f99e0028d43aab1e9170'
+
 
   require "omniauth-facebook"
-
-  config.omniauth :facebook, "727270763950828", "4a526d2c0ca23080d5d7616b9705b98f", scope: "email"
-  
-
-
+  config.omniauth :facebook, '727270763950828', '4a526d2c0ca23080d5d7616b9705b98f'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -102,7 +98,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'e7809842288f0d06bab771987539396a530e1d255a12e440fab15a1139b7424cfd51186fc0b7e81b02563ab4facc80b1c74614099adc4416efa84c68885c6da1'
+  # config.pepper = 'a4c73c2875035e3f32e471d1d061549f529777c98d3708763f96ef9d9221a5ba5cabeaec6b507d878fdc69e7e064370775329623dc6a72ec3f367f1e6d08a4b2'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
