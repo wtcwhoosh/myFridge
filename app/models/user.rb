@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :ingredients, :through => :fridge_ingredients
+  has_many :fridge_ingredients
+  has_many :recipes
+  belongs_to :recipe_looper
+  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]

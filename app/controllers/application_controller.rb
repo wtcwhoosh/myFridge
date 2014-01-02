@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :authenticate_user!
-  before_action :configure_permitted_parameters if :devise_controller?
+#  before_action :configure_permitted_parameters if :devise_controller?
 
 
 
@@ -12,17 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-#  def current_user?
-#    User.find(params[:user_id]) == User.find(session[:user_id])
+
+
+#  protected
+
+
+#  def configure_permitted_parameters
+#    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, 
+#                                                            :uid, :provider) }
 #  end
-
-
-
- protected
-
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, 
-                                                            :uid, :provider) }
-  end
 end
