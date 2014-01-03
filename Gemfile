@@ -17,7 +17,7 @@ gem "jquery-ui-rails"
 
 
 # Devise and Omniauth
-gem "devise", "~> 3.0.0"
+gem "devise"
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
