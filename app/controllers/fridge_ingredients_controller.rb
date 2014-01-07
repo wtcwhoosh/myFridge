@@ -33,6 +33,8 @@ class FridgeIngredientsController < ApplicationController
   def new
     @user = current_user
     @fridge_ingredient = FridgeIngredient.new
+    @fridge_ingredients = FridgeIngredient.where(:user_id == current_user.id)
+    @recipe_ingredients = RecipeIngredient.all
 #    @user.recipe_looper.recipes = Recipe.order(sort_column + " " + sort_direction)
 
     respond_to do |format|

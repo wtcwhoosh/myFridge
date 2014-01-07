@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  helper_method :possible_recipes
 
 
   def authenticate
@@ -11,8 +11,30 @@ class ApplicationController < ActionController::Base
       redirect_to :controller => 'auth', :action => 'login'
     end
   end
+  
+  def possible_recipes(fridge_ingredients, recipe_ingredients)
+    available_ingredients = fridge_ingredients.collect do |fridge_ingredient|
+      fridge_ingredient.ingredient.name.to_s
+    end
+    recipes = recipe_ingredients.collect do |recipe_ingredient|
+        available_ingredients.include? recipe_ingredient.ingredient.name.to_s
+    end
+    unless recipes.empty?
+      puts recipes
+    end
+  end
+  
 
-
+  #   common_ingredients = fridge_ingredients.ingredient & recipe_ingredients.ingredient
+  #   common_ingredients.each do |common_ingredient|
+  #     recipes ||= []
+  #     recipes << Recipe.where(Recipe.recipe_ingredient == common_ingredient) 
+  #   end
+  #   recipes.each do |recipe|
+  #     put recipe
+  #   end
+  # end
+          
   protected
 
 
