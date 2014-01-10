@@ -14,7 +14,7 @@
     <p>
       By <%= @recipe.user.name if @recipe.user %>
     </p>
-    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
 
 
     <div class="field">
@@ -22,6 +22,13 @@
       <%= f.text_field :name %>
     </div>
     <br>
+    <div class="field">
+      <%# @drink_types.each do |drink_type| %>
+      <%#= radio_button_tag :drink_type_id, drink_type.id %> 
+      <%#= label :drink_type_id, drink_type.name %>
+      <%# end %>
+    </div>
+
 
     <b>Drinkware Type:</b> <br/>
     <%=  f.radio_button :drinktype, 'jjuice'%><%= f.label "drinktype_jjuice", (image_tag 'redcup.png') %>

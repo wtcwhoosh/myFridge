@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe.user_id = session[:user_id]
-
+    @drink_types = DrinkType.all
     4.times { @recipe.recipe_ingredients.build }
 
     respond_to do |format|
@@ -105,7 +105,7 @@ private
 
   def recipe_params
     params.require(:recipe).permit(:name, :instruction, :drinktype, :user_id,
-                                   :recipe_looper_id, recipe_ingredients_attributes: [ :ingredient_id, :recipe_id, :_destroy ] )
+                                   :recipe_looper_id, recipe_ingredients_attributes: [ :ingredient_id, :recipe_id, :unit, :quantity, :_destroy ] )
   end
 
 end
