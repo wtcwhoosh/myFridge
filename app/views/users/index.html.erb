@@ -7,7 +7,7 @@
   </tr>
   <% @users.each do |user| %>
   <tr>
-    <td><%= image_tag user.profilePicture_url.to_s %>
+    <td><%= image_tag user.profilePicture_url.to_s if user.profilePicture %>
     <% if user.firstName and user.lastName %>
     <td><%= "#{user.firstName} #{user.lastName}" %></td>
     <% else %>

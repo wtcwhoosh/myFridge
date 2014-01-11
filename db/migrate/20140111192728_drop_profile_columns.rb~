@@ -1,0 +1,4 @@
+class DropProfileColumns < ActiveRecord::Migration
+  def change
+  end
+end
