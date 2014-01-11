@@ -1,6 +1,6 @@
 MyFridge::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  
+  Paperclip.options[:command_path] = "/usr/local/bin/"
   config.eager_load = true
   
   # Code is not reloaded between requests
