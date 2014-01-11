@@ -2,7 +2,11 @@
 <br>
 <br>
 <br>
+    <%= image_tag @user.profilePicture.url(:medium) %>
     <%= @user.firstName %>
     <%= @user.lastName %>
     <%= @user.email %>
 
+<% if @user == current_user %>
+<%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
+<% end %>
