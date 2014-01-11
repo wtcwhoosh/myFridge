@@ -15,11 +15,23 @@
 ** Set Up Facebook User Login
    Set up environment keys for facebook login (stack overflow question)
    
-
+* January 10
+** Add User Picture and Location
+   Look into carrier_wave and :picture field
+   Look at user list that links to profile page
+   Edit profile page so all information is displayed including fridge ingredients displayed 
+   
+** Start Design Overhaul
+*** Set Bootstrap up
+    Erase from Gemfile
+    Check where bootstrap install is on jobshadow
+    Check application.css and application.js files for requirements
+    Replicate
+*** Start from Sign in Page
+    Redo each page in the chain of user flow
+    
 * IN THE FUTURE
-** Do Recipe Looper in a Ruby Way
 ** Add Images
-** Fix Styling (tone it down a bit)
 ** Set Up Drink Type Model and Update Views
    Create Model
    Change Radio Buttons to a for each drink_type loop

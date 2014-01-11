@@ -4,6 +4,9 @@ MyFridge::Application.routes.draw do
   resources :drink_types
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  resources :users, only: [:index, :show]
+
   resources :recipe_loopers 
    
   resources :fridge_ingredients

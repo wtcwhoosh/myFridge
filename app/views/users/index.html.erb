@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <% if user.firstName and user.lastName %>
+    <td><%= "#{user.firstName} #{user.lastName}" %></td>
+    <% else %>
+    <td>No Name Defined</td>
+    <% end  %>
+    <td><%= user.email %></td>>
+    <td><%= link_to 'Profile', user %></td>
+    <% end %>
+  </tr>
+</table>
+
