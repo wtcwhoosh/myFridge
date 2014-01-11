@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :recipes
   belongs_to :recipe_looper
   
-  mount_uploader :profilePicture, ProfilePictureUploader
+  # mount_uploader :profilePicture, ProfilePictureUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
