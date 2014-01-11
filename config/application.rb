@@ -2,7 +2,10 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'carrierwave'
+
 Bundler.require(:default, Rails.env)
+
 
 module MyFridge
   class Application < Rails::Application
