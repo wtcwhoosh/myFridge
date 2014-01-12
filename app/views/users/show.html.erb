@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-    <%= image_tag @user.profilePicture_url.to_s %>
+    <%= image_tag @user.profilePicture_url(:thumb).to_s %>
     <%= @user.firstName %>
     <%= @user.lastName %>
     <%= @user.email %>
