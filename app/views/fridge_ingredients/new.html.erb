@@ -1,31 +1,23 @@
-<div class="container-fluid wrapper wrapper-home black">
-
-  <div class="col-xs-6 col-sm-6 col-lg-6">
-    <div class="well">
-      <h1>Add Drinks</h1>
-      <%= render 'form' %>
-    </div>
-    <div class="well">
-      <h1>Your Bar</h1>
-
-      <%= render 'layouts/fridge_ingredients_list' %>
-
-    </div>
+<div class="col-xs-6 col-sm-6 col-lg-6">
+  <div class="well">
+    <h1>Add Drinks</h1>
+    <%= render 'form' %>
   </div>
-  <div class="col-xs-6 col-sm-6 col-lg-6">
-    <div class="well">
-      <% unless @fridge_ingredients.count == 0 %>
-        <h1>Try These Drinks</h1>
-	<%= possible_recipes(@fridge_ingredients, @recipe_ingredients) %>
-	<%= render 'layouts/youshouldcheckout' %>
-	<% else %>
-	Add Some Ingredients to Get recommendations for drink recipes!
-    </div>
-    <% end %>
-
-
-
-
+  <div class="well">
+    <h1>Your Bar</h1>
+    <%= render 'layouts/fridge_ingredients_list' %>
 
   </div>
 </div>
+<div class="col-xs-6 col-sm-6 col-lg-6">
+  <div class="well">
+    <% unless @fridge_ingredients.count == 0 %>
+    <h1>Try These Drinks</h1>
+    <%= possible_recipes(@fridge_ingredients, @recipe_ingredients) %>
+    <%= render 'layouts/youshouldcheckout' %>
+    <% else %>
+    Add Some Ingredients to Get recommendations for drink recipes!
+  </div>
+  <% end %>
+</div>
+
