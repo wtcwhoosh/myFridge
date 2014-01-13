@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   helper_method :possible_recipes
 
 
+  def after_sign_in_path_for(resource) 
+    session["user_return_to"] || new_user_registration_path 
+  end
+
   def authenticate
     if ! session[:user_id]
       flash[:error] = 'Please login before proceed.'
@@ -25,15 +29,6 @@ class ApplicationController < ActionController::Base
   end
   
 
-  #   common_ingredients = fridge_ingredients.ingredient & recipe_ingredients.ingredient
-  #   common_ingredients.each do |common_ingredient|
-  #     recipes ||= []
-  #     recipes << Recipe.where(Recipe.recipe_ingredient == common_ingredient) 
-  #   end
-  #   recipes.each do |recipe|
-  #     put recipe
-  #   end
-  # end
           
   protected
 
