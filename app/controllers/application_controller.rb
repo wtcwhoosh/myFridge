@@ -1,21 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_action :authenticate_user!
+  before_action :authenticate!, unless: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :possible_recipes
 
-
-  def after_sign_in_path_for(resource) 
-    session["user_return_to"] || new_user_registration_path 
-  end
-
-  def authenticate
-    if ! session[:user_id]
-      flash[:error] = 'Please login before proceed.'
-      redirect_to :controller => 'auth', :action => 'login'
+  def authenticate!
+    if user_signed_in?
+      else
+      redirect_to new_user_registration_path
     end
   end
-  
+
+
   def possible_recipes(fridge_ingredients, recipe_ingredients)
     available_ingredients = fridge_ingredients.collect do |fridge_ingredient|
       fridge_ingredient.ingredient.name.to_s
