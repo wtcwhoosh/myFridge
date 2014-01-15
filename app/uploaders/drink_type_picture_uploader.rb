@@ -1,7 +1,8 @@
 # encoding: utf-8
 
-class ProfilePictureUploader < CarrierWave::Uploader::Base
-  include CarrierWave::MiniMagick
+class DrinkTypePictureUploader < CarrierWave::Uploader::Base
+
+ include CarrierWave::MiniMagick
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
