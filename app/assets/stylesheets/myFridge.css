@@ -117,7 +117,7 @@ a:hover.link-text
  */
 
 input[type="radio"] {
-    display: none;
+    display: checkbox;
 }
 
 input[type="radio"] + label{

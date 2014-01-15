@@ -45,6 +45,8 @@
 <%= f.collection_radio_buttons :setting_id, Setting.all, :id, :name %><br>
 
 
+
+
 </div>
   
 <% end %>
