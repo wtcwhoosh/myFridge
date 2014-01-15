@@ -10,7 +10,7 @@
   <%= @drink_type.description %>
 </p>
 
-<%= @drink_type.picture_url(:thumb).to_s %>
+<%= image_tag @drink_type.picture_url(:thumb).to_s %>
 
 <%= link_to 'Edit', edit_drink_type_path(@drink_type) %> |
 <%= link_to 'Back', drink_types_path %>

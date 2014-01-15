@@ -10,7 +10,7 @@
   <%= @setting.description %>
 </p>
 
-<%= @setting.picture_url(:thumb).to_s %>
+<%= image_tag @setting.picture_url(:thumb).to_s %>
 
 <%= link_to 'Edit', edit_setting_path(@setting) %> |
 <%= link_to 'Back', settings_path %>
