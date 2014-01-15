@@ -11,7 +11,7 @@
 <div class="col-xs-3 col-sm-3">
     <% unless @fridge_ingredients.count == 0 %>
     <h1>Try These Drinks</h1>
-    <%= possible_recipes(@fridge_ingredients, @recipe_ingredients) %>
+    <%#= possible_recipes(@fridge_ingredients, @recipe_ingredients) %>
     <%= render 'layouts/youshouldcheckout' %>
     <% else %>
     Add Some Ingredients to Get recommendations for drink recipes!
