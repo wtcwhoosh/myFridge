@@ -6,6 +6,8 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients
   belongs_to :recipe_looper
   belongs_to :drink_type
+  belongs_to :setting
+  belongs_to :mood
   accepts_nested_attributes_for :recipe_ingredients,:reject_if => lambda { |a| a[:ingredient_id].blank? }, :allow_destroy => true
 
   make_flaggable :like

@@ -105,7 +105,8 @@ private
 
   def recipe_params
     params.require(:recipe).permit(:name, :instruction, :drinktype, :user_id,
-                                   :recipe_looper_id, recipe_ingredients_attributes: [ :ingredient_id, :recipe_id, :unit, :quantity, :_destroy ] )
+                                   :recipe_looper_id, :setting_id, 
+                                   recipe_ingredients_attributes: [ :ingredient_id, :recipe_id, :unit, :quantity, :_destroy ] )
   end
 
 end

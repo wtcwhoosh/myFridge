@@ -1,6 +1,8 @@
 MyFridge::Application.routes.draw do
    
 
+  resources :settings
+
   resources :moods
 
   resources :drink_types
