@@ -1,8 +1,8 @@
+<div class="col-xs-4">
 <%= form_for(@recipe) do |f| %>
     <% if @recipe.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
-
           <ul>
             <% @recipe.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -10,48 +10,33 @@
           </ul>
         </div>
     <% end %>
-
     <p>
       By <%= @recipe.user.name if @recipe.user %>
     </p>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-
-
     <div class="field">
       <b>Recipe Name</b><br />
       <%= f.text_field :name %>
     </div>
     <br>
-    <div class="field">
-      <%# @drink_types.each do |drink_type| %>
-      <%#= radio_button_tag :drink_type_id, drink_type.id %> 
-      <%#= label :drink_type_id, drink_type.name %>
-      <%# end %>
-    </div>
-
-
-    <b>Drinkware Type:</b> <br/>
-    <%=  f.radio_button :drinktype, 'jjuice'%><%= f.label "drinktype_jjuice", (image_tag 'redcup.png') %>
-    <%=  f.radio_button :drinktype, 'ctail'%><%= f.label "drinktype_ctail", (image_tag 'cocktail.png') %>
-    <%=  f.radio_button :drinktype, 'martini'%><%= f.label "drinktype_martini", (image_tag 'glass.png') %>
-    <br>
-
     <b>Ingredient:</b>
     <%= f.fields_for :recipe_ingredients do |build| %>
         <%= render 'recipe_ingredient_fields', :f => build %>
     <% end %>
     <b><%= link_to_add_fields "Add More Ingredients", f, :recipe_ingredients %></b>
     <div class="field">
-
       <br>
-
       <%= f.label :instruction, "Instructions" %><br />
       <%= f.text_area :instruction %>
-
     </div>
-
-
-    <div class="actions">
+      <div class="actions">
       <%= f.submit %>
+      <%= link_to 'Back', recipes_path %>
     </div>
+</div>
+<div class="col-xs-8">
+<%= f.label :drink_type_id, "Drink Type:" %> <br>
+    <%= f.collection_radio_buttons :drink_type_id, DrinkType.all, :id, :name %><br>
+</div>
+  
 <% end %>

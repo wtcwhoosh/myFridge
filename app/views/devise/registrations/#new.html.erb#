@@ -17,7 +17,7 @@
 </div>
 <div class="col-xs-4">
   <%= image_tag('cheers.jpg', width: '100%', height: '100%', :class => "img-rounded") %>
-  <h4>Connect with your friends and compete against other drinking circles to find out how hard your crew actually rages.</h4>
+  <h4>Connect with your friends and cform a drinking circle to find out how hard your crew actually rages.</h4>
 </div>
 <div class="col-xs-4">
   <%= image_tag('pregame.jpg', width: '100%', height: '100%', class: "img-rounded") %>
