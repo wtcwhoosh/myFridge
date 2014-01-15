@@ -1,4 +1,0 @@
-class DrinkType < ActiveRecord::Migration
-  def change
-  end
-end
