@@ -36,7 +36,10 @@
 </div>
 <div class="col-xs-8">
 <%= f.label :drink_type_id, "Drink Type:" %> <br>
-    <%= f.collection_radio_buttons :drink_type_id, DrinkType.all, :id, :name %><br>
+<%= f.collection_radio_buttons :drink_type_id, DrinkType.all, :id, :name %><br>
+<% @drink_types.each do |drink_type| %>
+   <%=  f.radio_button :drink_type_id, drink_type.id %><%= f.label :drink_type_id, drink_type.name %>
+<% end %>
 </div>
   
 <% end %>
