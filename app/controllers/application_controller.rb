@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
       puts recipes
     end
   end
+
   
 
           

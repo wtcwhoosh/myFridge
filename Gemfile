@@ -27,9 +27,10 @@ gem 'mini_magick'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 #Deployment gems
-
 gem 'unicorn'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
-
+#Sunspot
+gem 'sunspot_rails'
+gem 'sunspot_solr'
