@@ -1,4 +1,4 @@
-
+ 
 
 require "bundler/capistrano"
 require "rvm/capistrano"
@@ -29,7 +29,11 @@ namespace :deploy do
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
-    end
+     end
+   end
+
+   task :setup_solr_data_dir do
+     run "mkdir -p #{shared_path}/solr/data"
   end
 
   task :setup_config, roles: :app do
@@ -53,6 +57,6 @@ namespace :deploy do
       puts "Run `git push` to sync changes."
       exit
     end
-  end
-  before "deploy", "deploy:check_revision"
-end
+   end
+   before "deploy", "deploy:check_revision"
+ end
