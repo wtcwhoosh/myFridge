@@ -15,12 +15,12 @@
         <li><%#= link_to "Drinks", recipes_path %></li>
         <li><%= link_to "Create your Drink", new_recipe_path %></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-	<div class="form-group">
-	  <input type="text" class="form-control" placeholder="Search Drinks, Buddies, Events">
-	</div>
-	<button type="submit" class="btn btn-primary">Search</button>
-</form>
+      <%= form_tag(users_path, method: "get", class: "navbar-form navbar-left", role: "search") do %>
+      <div class="form-group">
+	<%= text_field_tag :search, params[:search], placeholder: "Search users, recipes, events, etc.", class: "form-control"  %>
+      </div>
+      <%= button_tag "Search", class: "btn btn-primary" %>
+      <% end %>     
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         <li class="dropdown">

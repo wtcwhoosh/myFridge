@@ -12,9 +12,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
   
-  # has_attached_file :profilePicture, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png",
-  #                  :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
-  #                  :url => "/system/:attachment/:id/:style/:filename"
+  # Solr_Sunspot Code:
+
+  searchable do
+    text :firstName, :lastName
+  end
+     
+
+
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -36,4 +41,5 @@ class User < ActiveRecord::Base
       end
     end
   end
+
 end
