@@ -18,8 +18,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.search(params[:search])
-    #@recipes = Recipe.all
+    @recipes = Recipe.all
 
     # respond_to do |format|
     #  format.html # index.html.erb
