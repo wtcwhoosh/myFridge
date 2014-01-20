@@ -1,5 +1,6 @@
 MyFridge::Application.routes.draw do
-   
+
+  match '/results', to: 'results#mainresults', via: [:get, :post]
 
   resources :settings
 

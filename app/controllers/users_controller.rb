@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @search = Sunspot.search Recipe, User do
-      fulltext params[:search]
-    end
-    @users = @search.results
-  
+    @users = User.all
   end
 
   def show

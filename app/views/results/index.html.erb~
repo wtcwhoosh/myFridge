@@ -1,0 +1,3 @@
+<% @results.each do |result| %>
+<%= user.to_s %>
+<% end %>
