@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :ingredients, :through => :fridge_ingredients
   has_many :fridge_ingredients
   has_many :recipes
+  has_many :circles
   belongs_to :recipe_looper
   
   mount_uploader :profilePicture, ProfilePictureUploader
