@@ -1,3 +1,8 @@
 <% @results.each do |result| %>
-<%= result.to_s %>
-<% end %>
+  <% case result.class.to_s %>
+    <% when "Recipe" %>
+      <li><%= link_to result.name, recipe_path(result.id) %></li>
+    <% when "User" %>
+      <li><%= link_to result.email, user_path(result.id) %></li>
+      <% end %>
+      <% end %>
