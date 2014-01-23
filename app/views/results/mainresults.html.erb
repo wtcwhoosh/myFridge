@@ -4,5 +4,7 @@
       <li><%= link_to result.name, recipe_path(result.id) %></li>
     <% when "User" %>
       <li><%= link_to result.email, user_path(result.id) %></li>
-      <% end %>
-      <% end %>
+    <% when "Circle" %>
+    <li><%= link_to result.name, circle_path(result.id) %></li>  
+    <% end %>
+    <% end %>
