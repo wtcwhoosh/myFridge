@@ -1,0 +1,29 @@
+<h1>Listing circle_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Circle</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @circle_users.each do |circle_user| %>
+      <tr>
+        <td><%= circle_user.circle_id %></td>
+        <td><%= circle_user.user_id %></td>
+        <td><%= link_to 'Show', circle_user %></td>
+        <td><%= link_to 'Edit', edit_circle_user_path(circle_user) %></td>
+        <td><%= link_to 'Destroy', circle_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Circle user', new_circle_user_path %>

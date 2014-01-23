@@ -8,6 +8,7 @@ class CirclesController < ApplicationController
 
   # GET /circles/1
   def show
+    @join_circle = CircleUser.new
   end
 
   # GET /circles/new

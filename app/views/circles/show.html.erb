@@ -1,3 +1,4 @@
+<div class="col-xs-6">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -19,6 +20,16 @@
   <strong>Picture:</strong>
   <%= @circle.picture %>
 </p>
-
+</div>
+<div class="col-xs-6">
+<% if current_user.circles.include? @circle %>
+<% @circle_user = CircleUser.find_by_user_id(current_user.id) %>
+  <p>Welcome back to the Circle</p>
+  <%= link_to 'Leave the Circle', @circle_user, method: :delete, data: { confirm: 'Do you really want to leave circle?' } %>
+<% else %>
+  <%= render 'layouts/joincircleform' %>
+<% end %>
+</div>
+<br>
 <%= link_to 'Edit', edit_circle_path(@circle) %> |
 <%= link_to 'Back', circles_path %>

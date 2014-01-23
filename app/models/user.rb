@@ -4,9 +4,10 @@ class User < ActiveRecord::Base
   has_many :ingredients, :through => :fridge_ingredients
   has_many :fridge_ingredients
   has_many :recipes
-  has_many :circles
+  has_many :circles, dependent: :destroy
+  has_many :circles, through: :circle_users 
   belongs_to :recipe_looper
-  
+  has_many :circle_users
   mount_uploader :profilePicture, ProfilePictureUploader
 
   devise :database_authenticatable, :registerable,

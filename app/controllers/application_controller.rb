@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :authenticate!, unless: :devise_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
-  helper_method :possible_recipes
+  helper_method :possible_recipes, :circle_member?
 
   def authenticate!
     if user_signed_in?
@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_registration_path
     end
   end
-
-
+  
+  
   def possible_recipes(fridge_ingredients, recipe_ingredients)
     available_ingredients = fridge_ingredients.collect do |fridge_ingredient|
       fridge_ingredient.ingredient.name.to_s
@@ -24,8 +24,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
-
+  def circle_member?
+    if User.circles.include @circle
+    end
+  end
           
   protected
 

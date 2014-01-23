@@ -29,7 +29,10 @@
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%#= link_to 'profile', user_path(user) %></li>
+            <% current_user.circles.each do |circle| %>
+	    <li><%= link_to circle.name, circle %></li>
+	    <% end %>
+	    <li><%= link_to 'Find a Circle', circles_path %></li>
 	    <li><%= link_to 'Create Circle', new_circle_path %></li>
             <li><%= link_to 'logout', destroy_user_session_path, method: :delete %></li>
           </ul>
