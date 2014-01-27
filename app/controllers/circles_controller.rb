@@ -9,6 +9,7 @@ class CirclesController < ApplicationController
   # GET /circles/1
   def show
     @join_circle = CircleUser.new
+    @memory = Memory.new
   end
 
   # GET /circles/new

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Circle:</strong>
+  <%= @memory.circle_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @memory.user_id %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @memory.score %>
+</p>
+
+<p>
+  <strong>Memory:</strong>
+  <%= @memory.memory %>
+</p>
+
+<%= link_to 'Edit', edit_memory_path(@memory) %> |
+<%= link_to 'Back', memories_path %>

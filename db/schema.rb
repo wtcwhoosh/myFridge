@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124020711) do
+ActiveRecord::Schema.define(version: 20140127161338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,17 @@ ActiveRecord::Schema.define(version: 20140124020711) do
     t.string   "invitable_type"
     t.datetime "time_sent"
     t.boolean  "accepted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memories", force: true do |t|
+    t.integer  "circle_id"
+    t.integer  "user_id"
+    t.integer  "score"
+    t.string   "memory"
+    t.integer  "memorable_id"
+    t.string   "memorable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

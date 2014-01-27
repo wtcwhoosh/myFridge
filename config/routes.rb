@@ -1,5 +1,7 @@
 MyFridge::Application.routes.draw do
 
+  resources :memories
+
   resources :invitations
 
   resources :circle_users
@@ -23,7 +25,7 @@ MyFridge::Application.routes.draw do
   resources :fridge_ingredients
 
 
-  root to: 'fridge_ingredients#new'
+  root to: 'circles#index'
   
   resources :recipe_ingredients
 
