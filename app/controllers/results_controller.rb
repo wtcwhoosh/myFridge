@@ -4,5 +4,6 @@ class ResultsController < ApplicationController
       fulltext params[:search]
     end
     @results = @search.results
+    @invitation = Invitation.new
   end
 end

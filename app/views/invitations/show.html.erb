@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sending user:</strong>
+  <%= @invitation.sending_user_id %>
+</p>
+
+<p>
+  <strong>Receiving user:</strong>
+  <%= @invitation.receiving_user_id %>
+</p>
+
+<p>
+  <strong>Invitable:</strong>
+  <%= @invitation.invitable_id %>
+</p>
+
+<p>
+  <strong>Invitable type:</strong>
+  <%= @invitation.invitable_type %>
+</p>
+
+<p>
+  <strong>Time sent:</strong>
+  <%= @invitation.time_sent %>
+</p>
+
+<p>
+  <strong>Accepted:</strong>
+  <%= @invitation.accepted %>
+</p>
+
+<%= link_to 'Edit', edit_invitation_path(@invitation) %> |
+<%= link_to 'Back', invitations_path %>

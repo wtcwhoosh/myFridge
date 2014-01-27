@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :invitations
   has_many :ingredients, :through => :fridge_ingredients
   has_many :fridge_ingredients
   has_many :recipes
   has_many :circles, dependent: :destroy
   has_many :circles, through: :circle_users 
+  has_many :invitations, dependent: :destroy
   belongs_to :recipe_looper
   has_many :circle_users
   mount_uploader :profilePicture, ProfilePictureUploader

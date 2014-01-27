@@ -1,5 +1,7 @@
 MyFridge::Application.routes.draw do
 
+  resources :invitations
+
   resources :circle_users
 
   resources :circles

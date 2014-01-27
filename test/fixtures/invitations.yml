@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sending_user_id: 1
+  receiving_user_id: 1
+  invitable_id: 1
+  invitable_type: MyString
+  time_sent: 2014-01-23 21:07:11
+  accepted: false
+
+two:
+  sending_user_id: 1
+  receiving_user_id: 1
+  invitable_id: 1
+  invitable_type: MyString
+  time_sent: 2014-01-23 21:07:11
+  accepted: false
