@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127161338) do
+ActiveRecord::Schema.define(version: 20140127185359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20140127161338) do
     t.string   "memorable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "timeposted"
   end
 
   create_table "moods", force: true do |t|
