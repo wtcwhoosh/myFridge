@@ -27,7 +27,7 @@ MyFridge::Application.routes.draw do
   resources :fridge_ingredients
 
 
-  root to: 'circles#index'
+  root to: 'users#home'
   
   resources :recipe_ingredients
 

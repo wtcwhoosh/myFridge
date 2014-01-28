@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def home
     @circles = Circle.all
+    @memories = Memory.all
   end
   
   def index

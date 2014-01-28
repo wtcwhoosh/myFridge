@@ -1,0 +1,8 @@
+<ul>
+<% @circles.each do |circle| %>
+  <% if current_user.circles.include? circle %>
+    <li><%= link_to "#{circle.name}", circle %></li>
+  <% end %>
+<% end %>
+</ul>
+
