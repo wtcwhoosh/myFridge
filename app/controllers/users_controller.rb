@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   helper_method :circle_member?
 
+  def home
+    @circles = Circle.all
+  end
+  
   def index
     @users = User.all
   end
@@ -9,14 +13,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def circle_member?
-    member_ids = @circle_members.collect do |circle_member|
-      circle_member.id
-    end
-    if member_ids.include? current_user.id
-    end
-  end
-
+  
 
 
 end

@@ -1,0 +1,11 @@
+<% @circles.each do |circle| %>
+<% if current_user.circles.include? circle %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <small class="panel-heading"><%= memory.timeposted.beginning_of_minute.in_time_zone('Eastern Time (US & Canada)') %></small>
+    </div>
+    <div class="panel-body">
+    <p class="lead"><%= circle.memories %></p><br>
+    </div>
+  </div>
+  
