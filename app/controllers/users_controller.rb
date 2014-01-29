@@ -2,8 +2,10 @@ class UsersController < ApplicationController
   helper_method :circle_member?
 
   def home
+    @user_circles = current_user.circles
     @circles = Circle.all
     @memories = Memory.all
+    @memory = Memory.new
   end
   
   def index

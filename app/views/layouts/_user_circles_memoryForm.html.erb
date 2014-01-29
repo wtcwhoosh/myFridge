@@ -1,0 +1,30 @@
+<%= form_for(@memory) do |f| %>
+  <% if @memory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
+
+      <ul>
+      <% @memory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %><br>
+    <%= f.hidden_field :timeposted, :value => Time.now %>
+  </div>
+  <div class="input-group">
+    <%= f.label :memory %><br>
+    <%= f.text_area :memory, rows: '5', class: 'form-control', placeholder: 'Enter your drinking memory' %>
+  </div>
+  <div class="field">
+    <%= f.label :circle_id, 'Choose Circle to Post To:' %>
+    <%= collection_select(:memory, :circle_id, @user_circles, :id, :name) %> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

@@ -11,9 +11,9 @@
       <ul class="nav navbar-nav">
         <li><a href="/"><%= image_tag 'logo.png' %></a></li>
         <li><%#= link_to "Fridge", new_fridge_ingredient_path %></li>
-	<li><%= link_to "Users", users_path %></li>
+	<li><%#= link_to "Users", users_path %></li>
         <li><%#= link_to "Drinks", recipes_path %></li>
-        <li><%#= link_to "Circles", circles_path %></li>
+        <li><%= link_to "Circles", circles_path %></li>
       </ul>
       <%= form_tag(results_path, method: "get", class: "navbar-form navbar-left", role: "search") do %>
       <div class="form-group">
