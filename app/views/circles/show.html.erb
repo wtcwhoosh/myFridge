@@ -26,7 +26,7 @@
     <% end %>
 </div>
 <div class="col-xs-6">
-  <% @circle_user = CircleUser.find_by_user_id(current_user.id) %>
+  <% @circle_user = CircleUser.find_by_circle_id(@circle.id) %>
   <p>Welcome back to the Circle</p>
   <%= link_to 'Leave the Circle', @circle_user, method: :delete, data: { confirm: 'Do you really want to leave circle?' } %>
   <%= render 'layouts/memoryForm' %>
