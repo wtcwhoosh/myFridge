@@ -33,7 +33,7 @@
 	  <ul class="dropdown-menu">
 	      <% @invitations.each do |invite| if invite.receiving_user_id = current_user.id %>
 	        <% @circle = Circle.find_by_id(invite.invitable_id)  %>
-		  <%= link_to "#{@circle.name} Invitation", invite %><br>
+		 <li><%= link_to "#{@circle.name} Invitation", invite %></li>
 	      <% end %>
 	      <% end %>
 	
