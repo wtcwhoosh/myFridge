@@ -1,3 +1,5 @@
+<% @circles = Circle.all %>
+<% @invitations = Invitation.all %>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -25,14 +27,17 @@
         <% if user_signed_in? %>
 	<li class="dropdown">
 	  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-	    <% @invitations = Invitation.where("receiving_user_id = ?", current_user.id ) %>
 	    <%= @invitations.count %>
 	    <b class="caret"></b>
 	  </a>
 	  <ul class="dropdown-menu">
-	    <% @invitations.each do |invite| %>
-	    <li><%= link_to "Invitation", invite %></li>
-	    <% end %>
+	      <% @invitations.each do |invite| if invite.receiving_user_id = current_user.id %>
+	        <% @circle = Circle.find_by_id(invite.invitable_id)  %>
+		  <%= link_to "#{@circle.name} Invitation", invite %><br>
+	      <% end %>
+	      <% end %>
+	
+	    
 	  </ul>
 	</li>
         <li class="dropdown">

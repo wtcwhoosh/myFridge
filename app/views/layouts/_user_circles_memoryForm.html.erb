@@ -13,11 +13,11 @@
     <%= f.hidden_field :timeposted, :value => Time.now %>
   <div class="form-group">
     <%= f.label :memory %><br>
-    <%= f.text_area :memory, rows: '5', class: "form-control", placeholder: 'Enter your drinking memory' %>
+    <%= f.text_area :memory, rows: '5', class: "form-control", placeholder: 'Post a memory to the drinking circle.' %>
   </div>
   <div>
     <%= f.label :circle_id, 'Choose Circle to Post To:' %>
-    <%= collection_select(:memory, :circle_id, @user_circles, :id, :name) %> 
+    <%= collection_select(:memory, :circle_id, @user_circles, :id, :name, class: "form-control") %> 
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,10 +1,10 @@
 MyFridge::Application.routes.draw do
 
+  resources :invitations
+
   match '/users/home', to: 'users#home', via: :get
 
   resources :memories
-
-  resources :invitations
 
   resources :circle_users
 
