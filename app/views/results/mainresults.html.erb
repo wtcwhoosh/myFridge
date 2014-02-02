@@ -6,7 +6,7 @@
       <li><%= link_to result.email, user_path(result.id) %></li>
       <div class="form-group">
       <%= form_for @invitation do |f| %>
-	<%= f.hidden_field :sending_user_id, :value => current_user.id %>
+        <%= f.hidden_field :sending_user_id, :value => current_user.id %>
 	<%= f.hidden_field :receiving_user_id, :value => result.id %>
 	<%= f.hidden_field :time_sent, :value => Time.now %>
 	<%= f.label :invitable_id, "Invite user to Circle:" %>

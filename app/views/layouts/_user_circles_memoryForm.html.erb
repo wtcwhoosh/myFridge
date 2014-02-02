@@ -11,7 +11,13 @@
   <% end %>
     <%= f.hidden_field :user_id, :value => current_user.id %><br>
     <%= f.hidden_field :timeposted, :value => Time.now %>
-  <div class="form-group">
+    <div>
+      <%= f.fields_for :picture do |builder|  %>
+        <%= builder.label :picture %>  
+        <%= builder.file_field :picture %>
+      <% end %>
+    </div>
+    <div class="form-group">
     <%= f.label :memory %><br>
     <%= f.text_area :memory, rows: '5', class: "form-control", placeholder: 'Post a memory to the drinking circle.' %>
   </div>

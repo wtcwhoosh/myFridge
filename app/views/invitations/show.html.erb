@@ -2,27 +2,7 @@
 
 <p>
   <strong>Sending user:</strong>
-  <%= @invitation.sending_user_id %>
-</p>
-
-<p>
-  <strong>Receiving user:</strong>
-  <%= @invitation.receiving_user_id %>
-</p>
-
-<p>
-  <strong>Invitable:</strong>
-  <%= @invitation.invitable_id %>
-</p>
-
-<p>
-  <strong>Invitable type:</strong>
-  <%= @invitation.invitable_type %>
-</p>
-
-<p>
-  <strong>Time sent:</strong>
-  <%= @invitation.time_sent %>
+  <%= @invitation.sending_user.email %>
 </p>
 
 <p>

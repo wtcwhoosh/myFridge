@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @circles = Circle.all
     @memories = Memory.all
     @memory = Memory.new
+    @memory.picture = Picture.new
   end
   
   def index

@@ -18,6 +18,9 @@
 		 <%= link_to "Go to #{memory.circle.name}", memory.circle %></small>
 	  </div>
 	  <div class="panel-body">
+	    <% if memory.picture %>
+	    <%= image_tag memory.picture.picture_url(:thumb).to_s %>
+	    <% end %>
 	    <p class="lead"><%= memory.memory %></p><br>
 	  </div>
 	</div>

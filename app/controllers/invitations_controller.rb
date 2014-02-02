@@ -32,10 +32,13 @@ class InvitationsController < ApplicationController
 
   # PATCH/PUT /invitations/1
   def update
-    if @invitation.update(invitation_params)
-      redirect_to @invitation, notice: 'Invitation was successfully updated.'
+    if @invitation.update(invitation_params) and @invitation.accepted?
+      CircleUser.create(user_id: @invitation.receiving_user_id, circle_id: @invitation.invitable_id )
+      redirect_to Circle.find_by_id(@invitation.invitable_id )
+      @invitation.destroy
     else
-      render action: 'edit'
+      redirect_to users_home_path
+      @invitation.destroy
     end
   end
 

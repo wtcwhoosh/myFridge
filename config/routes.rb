@@ -1,5 +1,7 @@
 MyFridge::Application.routes.draw do
 
+  resources :pictures
+
   resources :invitations
 
   match '/users/home', to: 'users#home', via: :get

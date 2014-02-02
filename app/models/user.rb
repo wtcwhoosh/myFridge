@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :recipes
   has_many :circles, dependent: :destroy
   has_many :circles, through: :circle_users 
-  has_many :invitations, dependent: :destroy
   belongs_to :recipe_looper
   has_many :circle_users
   mount_uploader :profilePicture, ProfilePictureUploader

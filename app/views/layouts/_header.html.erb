@@ -33,7 +33,12 @@
 	  <ul class="dropdown-menu">
 	      <% @invitations.each do |invite| if invite.receiving_user_id = current_user.id %>
 	        <% @circle = Circle.find_by_id(invite.invitable_id)  %>
-		 <li><%= link_to "#{@circle.name} Invitation", invite %></li>
+		 <li><%= "#{@circle.name} Invitation" %><li> 
+		   <%= form_for(invite) do |f|  %>
+		   <%= f.label :accepted, "Accept?" %>
+		   <%= f.check_box :accepted %> 
+		   <%= f.submit "Respond" %>
+		   <% end %>
 	      <% end %>
 	      <% end %>
 	
