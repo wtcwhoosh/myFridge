@@ -20,7 +20,10 @@
       <small class="panel-heading"><%= memory.timeposted.beginning_of_minute.in_time_zone('Eastern Time (US & Canada)') %></small>
     </div>
     <div class="panel-body">
-    <p class="lead"><%= memory.memory %></p><br>
+      <% if memory.picture %>
+	    <%= image_tag memory.picture.picture_url(:thumb).to_s %>
+	    <% end %>
+      <p class="lead"><%= memory.memory %></p><br>
     </div>
   </div>
     <% end %>
