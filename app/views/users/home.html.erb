@@ -19,7 +19,7 @@
 	  </div>
 	  <div class="panel-body">
 	    <% if memory.picture %>
-	    <%= image_tag memory.picture.picture_url(:thumb).to_s %>
+	    <%= image_tag memory.picture.picture_url.to_s %>
 	    <% end %>
 	    <p class="lead"><%= memory.memory %></p><br>
 	  </div>
