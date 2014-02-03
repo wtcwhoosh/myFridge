@@ -6,6 +6,7 @@ class Circle < ActiveRecord::Base
   has_many :memories
   
   validates :user_id, presence: true
+  validates :name, uniqueness: true
 
   searchable do
     text :name, :description
