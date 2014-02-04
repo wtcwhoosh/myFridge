@@ -16,27 +16,27 @@ MyFridge::Application.routes.draw do
 
   resources :settings
 
-  resources :moods
+#  resources :moods
 
-  resources :drink_types
+#  resources :drink_types
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, only: [:index, :show]
 
-  resources :recipe_loopers 
+#  resources :recipe_loopers 
    
-  resources :fridge_ingredients
+#  resources :fridge_ingredients
 
 
   root to: 'users#home'
   
-  resources :recipe_ingredients
+#  resources :recipe_ingredients
 
-  resources :ingredients
+#  resources :ingredients
 
 
-  resources :feedbacks
+#  resources :feedbacks
 
 
  

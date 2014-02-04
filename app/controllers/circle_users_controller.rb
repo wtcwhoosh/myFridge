@@ -15,9 +15,6 @@ class CircleUsersController < ApplicationController
     @circle_user = CircleUser.new
   end
 
-  # GET /circle_users/1/edit
-  def edit
-  end
 
   # POST /circle_users
   def create

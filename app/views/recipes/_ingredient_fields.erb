@@ -1,7 +1,0 @@
-<fieldset>
-<%= f.hidden_field :recipe_id, :value=>params[:recipe_id] %>
-<%= f.collection_select(:ingredient_id, Ingredient.all, :id, :name) %>
-<%= f.hidden_field :_destroy %>
-<%= link_to "remove", '#', class: "remove_fields"%>
-<br>
-</fieldset>
