@@ -4,8 +4,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Name</th>
+      <th>Circle Name</th>
       <th>Description</th>
       <th>Picture</th>
       <th></th>
@@ -17,7 +16,6 @@
   <tbody>
     <% @circles.each do |circle| %>
       <tr>
-        <td><%= circle.user.email %></td>
         <td><%= circle.name %></td>
         <td><%= circle.description %></td>
         <td><%= circle.picture %></td>
