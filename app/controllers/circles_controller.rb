@@ -28,6 +28,8 @@ class CirclesController < ApplicationController
 
     if @circle.save
       redirect_to @circle, notice: 'Circle was successfully created.'
+      CircleUser.create(user_id: @circle.user.id, circle_id: @circle.id )
+
     else
       render action: 'new'
     end
