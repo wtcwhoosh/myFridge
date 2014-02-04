@@ -1,6 +1,17 @@
-<div class="panel-body">
-  <% if memory.picture %>
-    <%= image_tag memory.picture.picture_url.to_s %>
+<% @memories.reversed.each do |memory| %> 
+  <% if current_user.circles.include? memory.circle %>
+        <div class="panel panel-default">
+	  <div class="panel-heading">
+	    <small class="panel-heading"><%= memory.circle.name %> -- 
+	      <%= memory.timeposted.beginning_of_minute.in_time_zone('Eastern Time (US & Canada)') %> --  
+		 <%= link_to "Go to #{memory.circle.name}", memory.circle %></small>
+	  </div>
+	  <div class="panel-body">
+	    <% if memory.picture %>
+	    <%= image_tag memory.picture.picture_url.to_s, class: "img-rounded img-responsive" %>
+	    <% end %>
+	    <p class="lead"><%= memory.memory %></p><br>
+	  </div>
+	</div>
   <% end %>
-  <p class="lead"><%= memory.memory %></p><br>
-</div>
+<% end %>
