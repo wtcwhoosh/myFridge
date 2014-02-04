@@ -1,5 +1,5 @@
 <% @circles = Circle.all %>
-<% @invitations = Invitation.all %>
+<% @invitations = Invitation.where(receiving_user_id: current_user.id) %>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
