@@ -3,8 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Circle</th>
+      <th>Type</th>
+      <th>Invite only</th>
+      <th>Show members</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +16,10 @@
   <tbody>
     <% @settings.each do |setting| %>
       <tr>
-        <td><%= setting.name %></td>
-        <td><%= setting.description %></td>
+        <td><%= setting.circle_id %></td>
+        <td><%= setting.type %></td>
+        <td><%= setting.invite_only %></td>
+        <td><%= setting.show_members %></td>
         <td><%= link_to 'Show', setting %></td>
         <td><%= link_to 'Edit', edit_setting_path(setting) %></td>
         <td><%= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

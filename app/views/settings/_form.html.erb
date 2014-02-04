@@ -12,16 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :circle_id %><br>
+    <%= f.number_field :circle_id %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
   </div>
   <div class="field">
-    <%= f.label :picture, "Picture" %>
-    <%= f.file_field :picture %></div>
+    <%= f.label :invite_only %><br>
+    <%= f.check_box :invite_only %>
+  </div>
+  <div class="field">
+    <%= f.label :show_members %><br>
+    <%= f.check_box :show_members %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

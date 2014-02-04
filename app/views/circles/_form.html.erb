@@ -25,6 +25,14 @@
     <%= f.label :picture %><br>
     <%= f.text_field :picture %>
   </div>
+  <div>
+  <%= f.fields_for :setting do |builder| %>
+    <%= builder.label :show_members, "Should users be able to see other members in the Circle?" %>
+    <%= builder.check_box :show_members %><br>
+    <%= builder.label :invite_only, "Is the Circle invite only?" %>
+    <%= builder.check_box :invite_only %>
+  <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
+  circle_id: 1
+  type: 
+  invite_only: false
+  show_members: false
 
 two:
-  name: MyString
-  description: MyString
+  circle_id: 1
+  type: 
+  invite_only: false
+  show_members: false

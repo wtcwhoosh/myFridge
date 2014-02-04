@@ -1,6 +1,4 @@
 class Setting < ActiveRecord::Base
-  has_many :recipes
-
-  mount_uploader :picture, SettingPictureUploader
+  belongs_to :circle
 
 end

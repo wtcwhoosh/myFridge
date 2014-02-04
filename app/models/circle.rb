@@ -4,7 +4,11 @@ class Circle < ActiveRecord::Base
   has_many :users, through: :circle_users 
   has_many :invitations, as: :invitable
   has_many :memories
-  
+  has_one :setting
+  accepts_nested_attributes_for :setting
+
+
+ 
   validates :user_id, presence: true
   validates :name, uniqueness: true
 

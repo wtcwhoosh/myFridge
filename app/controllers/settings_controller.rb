@@ -53,6 +53,6 @@ class SettingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def setting_params
-      params.require(:setting).permit(:name, :description, :picture)
+      params.require(:setting).permit(:circle_id, :type, :invite_only, :show_members)
     end
 end

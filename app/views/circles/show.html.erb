@@ -34,7 +34,7 @@
   <%= link_to 'Leave the Circle', @circle_user, method: :delete, data: { confirm: 'Do you really want to leave circle?' } %>
   <%= render 'layouts/memoryForm' %>
     
-<% else %>
+<% elsif !@circle.setting.invite_only? %>
   <%= render 'layouts/joincircleform' %>
 <% end %>
 </div>

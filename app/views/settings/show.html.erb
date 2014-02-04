@@ -1,16 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @setting.name %>
+  <strong>Circle:</strong>
+  <%= @setting.circle_id %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @setting.description %>
+  <strong>Type:</strong>
+  <%= @setting.type %>
 </p>
 
-<%= image_tag @setting.picture_url(:thumb).to_s %>
+<p>
+  <strong>Invite only:</strong>
+  <%= @setting.invite_only %>
+</p>
+
+<p>
+  <strong>Show members:</strong>
+  <%= @setting.show_members %>
+</p>
 
 <%= link_to 'Edit', edit_setting_path(@setting) %> |
 <%= link_to 'Back', settings_path %>

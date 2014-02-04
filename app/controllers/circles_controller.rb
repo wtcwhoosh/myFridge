@@ -15,6 +15,7 @@ class CirclesController < ApplicationController
   # GET /circles/new
   def new
     @circle = Circle.new
+    @circle.setting = Setting.new
   end
 
   # GET /circles/1/edit
@@ -55,6 +56,6 @@ class CirclesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def circle_params
-      params.require(:circle).permit(:user_id, :name, :description, :picture)
+      params.require(:circle).permit(:user_id, :name, :description, :picture, setting_attributes: [ :show_members, :invite_only ] )
     end
 end
