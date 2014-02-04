@@ -1,16 +1,36 @@
-<div class="jumbotron">
-  <h1>It's your Drinking Circle...</h1>
-  <p class="lead">the people you have fun with.  You get ready for the night together, even if you don't spend it, or end it with one another.  Drinking Circle brings whatever our value proposition is, and you're going to be so intrigued you'll want to sign up now:   </p>
+
+<Div class="row">
+        <div class="well well-lg" style="width:50%; float:left;">
+  <h1>Welcome to DrinkingCircle</h1>
+  <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin gravida pellentesque augue sit amet hendrerit. Vivamus mollis adipiscing massa, quis tristique sapien dapibus id. Quisque a nibh quis velit pharetra interdum. Nunc consectetur aliquet enim eu dictum. Ut lacinia mauris et sapien rhoncus condimentum. Aenean vitae lorem fringilla, vestibulum nisl vel, congue eros. Pellentesque suscipit ante turpis, non vehicula ante ultrices at. Aenean quis convallis enim. Cras id euismod mauris. Sed pulvinar pharetra ultrices. Sed suscipit neque a velit consequat porttitor.
+ </p>
+        </div>
     
-  <%= form_for(resource, :html => { :class => "form-inline", :role => "form" }, :as => resource_name, 
+        
+            <div class="well well-lg" style="width:40%; float:right;">
+                <h1>Sign In</h1>
+            </div>
+        
+    
+            <div class="well well-lg" style="width:40%; float:right;">
+                <h1>Sign Up</h1>
+                    <div class="field">
+                <%= form_for(resource, :html => { :class => "form-inline", :role => "form" }, :as => resource_name, 
   :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+                        </div>
     <div class="form-group"><%#= f.label :email %><%= f.email_field :email, placeholder: "Email Address", class: "form-control", :autofocus => true %></div>
     <div class="form-group"><%#= f.label :password %><%= f.password_field :password, placeholder: "Password", class: "form-control" %></div>
     <div class="form-group"><%#= f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %></div>
     <div class="form-group"><%= f.submit "Sign up", class: "btn btn-primary" %></div>
     <% end %>
-</div>
+            </div>
+    
+</Div>
+<br style="clear:both"/>
+
+
+<!--
 <div class="col-xs-4">
   <%= image_tag('partyTime.jpg', width: '100%', height: '100%', :class => "img-rounded") %>
   <h4>Add booze, mixers, garnish, and supplies to your fridge and find out what drinks you can make.</h4>
@@ -25,3 +45,4 @@
 </div>
 
 
+-->
