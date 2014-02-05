@@ -32,12 +32,13 @@
   <% @circle_user = CircleUser.find_by circle_id: @circle.id, user_id: current_user.id  %>
   <p>Welcome back to the Circle</p>
   <%= link_to 'Leave the Circle', @circle_user, method: :delete, data: { confirm: 'Do you really want to leave circle?' } %>
-  <%= render 'layouts/memoryForm' %>
-    
+  <%= render 'layouts/memoryForm' %>    
 <% elsif !@circle.setting.invite_only? %>
   <%= render 'layouts/joincircleform' %>
 <% end %>
 </div>
 <br>
-<%= link_to 'Edit', edit_circle_path(@circle) %> |
+<% if @circle.user = current_user %> 
+  <%= link_to 'Edit', edit_circle_path(@circle) %> |
+<% end %>
 <%= link_to 'Back', circles_path %>
