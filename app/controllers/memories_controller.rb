@@ -1,15 +1,6 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :destroy]
 
-  # GET /memories
-  def index
-    @memories = Memory.all
-  end
-
-  # GET /memories/1
-  def show
-  end
-
   # GET /memories/new
   def new
     @memory = Memory.new
