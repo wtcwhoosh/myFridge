@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @memories = Memory.all
     @memory = Memory.new
     @memory.picture = Picture.new
+    @comment = Comment.new
   end
   
   def index

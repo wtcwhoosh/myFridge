@@ -1,5 +1,7 @@
 MyFridge::Application.routes.draw do
 
+  resources :comments
+
   resources :pictures
 
   resources :invitations
