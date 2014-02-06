@@ -16,7 +16,7 @@
         <li><%#= link_to "Drinks", recipes_path %></li>
         <li><%= link_to "Circles", circles_path %></li>
       </ul>
-      <%= form_tag(results_path, method: "get", class: "navbar-form navbar-left", role: "search") do %>
+      <%= form_tag(results_path, method: "get", class: "navbar-form navbar-left hidden-xs hidden-sm", role: "search") do %>
       <div class="form-group">
 	<%= text_field_tag :search, params[:search], placeholder: "Search users, circles, posts", class: "form-control"  %>
       </div>
