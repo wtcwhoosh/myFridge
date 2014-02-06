@@ -14,14 +14,16 @@
 	<p class="lead"><%= memory.memory %></p><br>
       </div>
     </div>
-    <div class="center-block">
+    <div class="center-block">     
+      <% if memory.comments %>
       <h4>Comments:</h4>
-      <ul>
-	<% if memory.comments %> 
-	  <% memory.comments.each do |comment| %>
-	    <li><%= comment.comment %></li>
-	  <% end %>
+      <ul>  
+	<% memory.comments.each do |comment| %>
+	  <li><%= comment.comment %></li>
 	<% end %>
+      <% else %>
+      <h4>No comments have been posted</h4>	
+      <% end %>
       </ul>
     </div><br>
     <%= form_for(@comment, role: "form") do |f| %>
