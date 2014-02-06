@@ -5,13 +5,15 @@
 
   <div><%= f.label :profilePicture %><br>
     <%= f.file_field :profilePicture %></div>
-  
+  <div><%= f.label :userName %><br />
+    <%= f.text_field :userName %></div>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
   <div><%= f.label :firstName %><br />
     <%= f.text_field :firstName %></div>
   <div><%= f.label :lastName %><br />
     <%= f.text_field :lastName %></div>
+  
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

@@ -38,10 +38,10 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, 
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:userName, :email, :password, :password_confirmation, 
                                                             :uid, :provider) }
-    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :uid, :provider ) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:profilePicture, :firstName, :lastName, :email, :password, 
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :userName, :password, :uid, :provider ) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:profilePicture, :userName, :firstName, :lastName, :email, :password, 
                                                                    :password_confirmation, :current_password) }
   end
 end
