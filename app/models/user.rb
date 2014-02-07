@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   mount_uploader :profilePicture, ProfilePictureUploader
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable,
          :omniauthable, :omniauth_providers => [:facebook]
   
   # Solr_Sunspot Code:
