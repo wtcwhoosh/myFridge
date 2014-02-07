@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  attr_accessor :login
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :invitations
@@ -11,6 +12,11 @@ class User < ActiveRecord::Base
   has_many :circle_users
   mount_uploader :profilePicture, ProfilePictureUploader
 
+  validates :username,
+  :uniqueness => {
+    :case_sensitive => false
+  }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :omniauthable, :omniauth_providers => [:facebook]
@@ -18,7 +24,7 @@ class User < ActiveRecord::Base
   # Solr_Sunspot Code:
 
   searchable do
-    text :userName
+    text :username
   end
      
 
@@ -45,4 +51,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.find_first_by_auth_conditions(warden_conditions)
+      conditions = warden_conditions.dup
+      if login = conditions.delete(:login)
+        where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+      else
+        where(conditions).first
+      end
+  end
 end

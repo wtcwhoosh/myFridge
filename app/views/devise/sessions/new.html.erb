@@ -1,6 +1,6 @@
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.email_field :email, :autofocus => true %><%= f.label :email %></div>
+  <div><%= f.text_field :userName, :autofocus => true %><%= f.label :email %></div>
   <div><%= f.label :password %><%= f.password_field :password %></div>
   <% if devise_mapping.rememberable? -%>
   <div><%= f.check_box :remember_me %> 
