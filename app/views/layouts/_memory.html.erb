@@ -23,9 +23,9 @@
 	<div class="col-xs-11">
 	  <h4>Comments:</h4>  
 	  <% memory.comments.each do |comment| %>
-	  <ul>
-	    <li><%= comment.comment %></li>
-	  </ul> 
+	  <p class="lead">
+	    <%= comment.comment %>
+	  </p> 
 	  <% end %>
 	  <%= form_for(@comment, role: "form") do |f| %>
 	  <div class="form-group">
