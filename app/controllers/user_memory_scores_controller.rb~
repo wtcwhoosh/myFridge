@@ -1,30 +1,14 @@
 class UserMemoryScoresController < ApplicationController
   before_action :set_user_memory_score, only: [:show, :edit, :update, :destroy]
 
-  # GET /user_memory_scores
-  def index
-    @user_memory_scores = UserMemoryScore.all
-  end
-
-  # GET /user_memory_scores/1
-  def show
-  end
-
-  # GET /user_memory_scores/new
-  def new
-    @user_memory_score = UserMemoryScore.new
-  end
-
-  # GET /user_memory_scores/1/edit
-  def edit
-  end
+  
 
   # POST /user_memory_scores
   def create
     @user_memory_score = UserMemoryScore.new(user_memory_score_params)
 
     if @user_memory_score.save
-      redirect_to @user_memory_score, notice: 'User memory score was successfully created.'
+      redirect_to root
     else
       render action: 'new'
     end

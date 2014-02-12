@@ -8,7 +8,7 @@ class UserMemoryScoresController < ApplicationController
     @user_memory_score = UserMemoryScore.new(user_memory_score_params)
 
     if @user_memory_score.save
-      redirect_to root
+      redirect_to root_path
     else
       render action: 'new'
     end
