@@ -1,0 +1,2 @@
+module UserMemoryScoresHelper
+end

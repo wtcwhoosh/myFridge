@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @memory = Memory.new
     @memory.picture = Picture.new
     @comment = Comment.new
-    @user_memory_score = UserMemoryScore.find_by_user_id(current_user.id)
     @new_user_memory_score = UserMemoryScore.new
   end
   

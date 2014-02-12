@@ -1,5 +1,7 @@
 MyFridge::Application.routes.draw do
 
+  resources :user_memory_scores
+
   resources :comments
 
   resources :pictures

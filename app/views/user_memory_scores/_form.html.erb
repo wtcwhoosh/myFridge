@@ -1,0 +1,33 @@
+<%= form_for(@user_memory_score) do |f| %>
+  <% if @user_memory_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_memory_score.errors.count, "error") %> prohibited this user_memory_score from being saved:</h2>
+
+      <ul>
+      <% @user_memory_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :memory_id %><br>
+    <%= f.number_field :memory_id %>
+  </div>
+  <div class="field">
+    <%= f.label :up %><br>
+    <%= f.check_box :up %>
+  </div>
+  <div class="field">
+    <%= f.label :down %><br>
+    <%= f.check_box :down %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
