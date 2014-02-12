@@ -14,6 +14,24 @@
 	  <%= image_tag memory.picture.picture_url.to_s, class: "img-rounded img-responsive" %>
 	  <% end %>
 	  <p class="lead"><%= memory.memory %></p><br>
+	  <% @user_memory_score = UserMemoryScore.find_by user_id: current_user.id, memory_id: memory.id %> 
+	  <% if @user_memory_score.nil? %>
+	    <%= form_for @new_user_memory_score do |f| %>
+	      <%= f.hidden_field :user_id, :value => current_user.id %>
+	      <%= f.hidden_field :memory_id, :value => memory.id %>
+	      <%= f.check_box :up %>
+	      <%= f.label :up, "Vote Post Up" %>
+	      <%= f.check_box :down %>
+	      <%= f.label :down, "Vote Post Down" %>
+	      <%= f.submit 'Vote' %>
+	    <% end %>
+	  <% else %>
+	    <% @total_scores = memory.user_memory_scores.count %>
+	    <% @up_scores = memory.user_memory_scores.where("up = true").count  %> 
+	    <% @down_scores = memory.user_memory_scores.where("down = true").count  %> 
+	    <%# @up_percent = @up_scores \ @total_scores * 100 %> <%= "#{@up_scores} Voted Up" %>
+	    <%= "#{@down_scores} Voted Down" %>
+	  <% end %>
 	</div>
       </div>         
       <% if memory.comments %>
@@ -38,6 +56,7 @@
       </div>
     </div>
   </div>
+  <% end %>
       <% end %>
       <% end %>
-      <% end %>
+

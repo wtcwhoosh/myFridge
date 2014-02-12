@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_memory_score.user_id %>
+</p>
+
+<p>
+  <strong>Memory:</strong>
+  <%= @user_memory_score.memory_id %>
+</p>
+
+<p>
+  <strong>Up:</strong>
+  <%= @user_memory_score.up %>
+</p>
+
+<p>
+  <strong>Down:</strong>
+  <%= @user_memory_score.down %>
+</p>
+
+<%= link_to 'Edit', edit_user_memory_score_path(@user_memory_score) %> |
+<%= link_to 'Back', user_memory_scores_path %>

@@ -3,7 +3,7 @@ class Memory < ActiveRecord::Base
   has_one :picture
   accepts_nested_attributes_for :picture
   has_many :comments
-
+  has_many :user_memory_scores
 
   belongs_to :memorable, polymorphic: true
   belongs_to :circle
