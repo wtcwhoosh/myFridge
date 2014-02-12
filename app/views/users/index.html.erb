@@ -8,7 +8,7 @@
   <% @users.each do |user| %>
   <tr>
     <td><%= image_tag user.profilePicture_url(:small_thumb).to_s if user.profilePicture %>
-    <td><%= user.username is user.username %></td>
+    <td><%= user.username if user.username %></td>
     <td><%= link_to 'Profile', user %></td>
     <% end %>
   </tr>
