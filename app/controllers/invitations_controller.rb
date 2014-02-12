@@ -1,23 +1,12 @@
 class InvitationsController < ApplicationController
   before_action :set_invitation, only: [:show, :edit, :update, :destroy]
 
-  # GET /invitations
-  def index
-    @invitations = Invitation.all
-  end
-
-  # GET /invitations/1
-  def show
-  end
 
   # GET /invitations/new
   def new
     @invitation = Invitation.new
   end
 
-  # GET /invitations/1/edit
-  def edit
-  end
 
   # POST /invitations
   def create
