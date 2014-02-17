@@ -1,5 +1,5 @@
-<% @memories.reversed.each do |memory| %> 
-  <% if current_user.circles.include? memory.circle %>
+<% @memories.reversed.each do |memory| %> <!-- Lists all posts in reverse chronological order -->
+  <% if current_user.circles.include? memory.circle and !memory.blacked_out?  %> <!-- Only shows the memories from circles that a belongs to -->
   <br>
   <div class="row">
     <div class="col-xs-12">

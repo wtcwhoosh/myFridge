@@ -14,19 +14,8 @@
 </p>
 <br>
 <% if current_user.circles.include? @circle %>
-  <% @circle.memories.reversed.each do |memory| %>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <small class="panel-heading"><%= memory.timeposted.beginning_of_minute.in_time_zone('Eastern Time (US & Canada)') %></small>
-    </div>
-    <div class="panel-body">
-      <% if memory.picture %>
-	    <%= image_tag memory.picture.picture_url(:thumb).to_s %>
-	    <% end %>
-      <p class="lead"><%= memory.memory %></p><br>
-    </div>
-  </div>
-    <% end %>
+  <% @memories = @circle.memories %>
+  <%= render 'layouts/memory' %>
 </div>
 <div class="col-xs-6">
   <% @circle_user = CircleUser.find_by circle_id: @circle.id, user_id: current_user.id  %>
