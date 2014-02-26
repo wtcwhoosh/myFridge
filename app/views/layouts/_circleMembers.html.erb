@@ -1,0 +1,7 @@
+<% if !@circle.setting.show_members? %> 
+  <% @circle.users.each do |user| %>
+    <%= link_to user.username, user %><br>
+  <% end %>
+<% else %>
+  <h4>The Members in this circle are protecting</h4>
+<% end %>

@@ -10,9 +10,11 @@ class CirclesController < ApplicationController
   def show
     @join_circle = CircleUser.new
     @memory = Memory.new
+    @memory.picture = Picture.new
     @comment = Comment.new
     @user_memory_score = UserMemoryScore.find_by_user_id(current_user.id)
     @new_user_memory_score = UserMemoryScore.new
+    
   end
 
   # GET /circles/new

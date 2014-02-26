@@ -1,8 +1,7 @@
-<%= form_for(@memory) do |f| %>
+<%= form_for(@memory, role: "form") do |f| %>
   <% if @memory.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
-
       <ul>
       <% @memory.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,17 +9,32 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %><br>
-    <%= f.hidden_field :circle_id, :value => @circle.id %>
     <%= f.hidden_field :timeposted, :value => Time.now %>
-  </div>
-  <div class="field">
+    <div class="form-group">
     <%= f.label :memory %><br>
-    <%= f.text_area :memory %>
+    <%= f.text_area :memory, rows: '5', class: "form-control", placeholder: 'Post a memory to the drinking circle.' %>
   </div>
+  <div>
+    <%= f.fields_for :picture do |builder|  %>
+      <%= builder.label :picture, "Add a picture:" %>  
+      <%= builder.file_field :picture %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :blackout_post %>
+    <%= f.check_box :blackout_post %>
+  </div>
+  <% if @circle.nil? %>
+  <div>
+    <%= f.label :circle_id, 'Choose Circle to Post To:' %>
+    <%= collection_select(:memory, :circle_id, @user_circles, :id, :name, class: "form-control") %> 
+  </div>
+  <% else %>
+    <%= f.hidden_field :circle_id, :value => @circle.id %>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
