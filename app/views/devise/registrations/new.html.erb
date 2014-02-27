@@ -1,16 +1,29 @@
-<div class="jumbotron">
-  <h1>It's your Drinking Circle...</h1>
-  <p class="lead">the people you have fun with.     </p>
-    
+
+ 
+<div class="jumbotron col-md-11" style="margin-left:auto; margin-right:auto;">
+  <h1>Drinking Circle</h1>
+   
+
   <%= form_for(resource, :html => { :class => "form-inline", :role => "form" }, :as => resource_name, 
   :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-    <div class="form-group"><%#= f.label :username %><%= f.text_field :username, placeholder: "User Name:", class: "form-control", :autofocus => true %></div>
-    <div class="form-group"><%#= f.label :password %><%= f.password_field :password, placeholder: "Password", class: "form-control" %></div>
-    <div class="form-group"><%#= f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %></div>
+    <div class="form-group"><%= f.text_field :username, placeholder: "User Name:", class: "form-control", :autofocus => true %></div>
+    <div class="form-group"><%= f.password_field :password, placeholder: "Password", class: "form-control" %></div>
+    <div class="form-group"><% f.label :password_confirmation %><%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %></div>
     <div class="form-group"><%= f.submit "Sign up", class: "btn btn-primary" %></div>
     <% end %>
+        <%= form_for("user", :html => { :class => "navbar-form navbar-right", :role => "form" }, :url => user_session_path) do |f| %>
+	<div class="form-group"><%= f.text_field :login, placeholder: "Username", class: "form-control", :autofocus => true %></div>
+	<div class="form-group"><%= f.password_field :password, placeholder: "password", class: "form-control" %></div>
+        <%= f.submit "Sign In", class: "btn btn-primary" %>
+	<% end %>
+
+
 </div>
+
+
+
+<!--
 <div class="col-xs-4">
   <%= image_tag('partyTime.jpg', width: '100%', height: '100%', :class => "img-rounded") %>
   <h4>Add booze, mixers, garnish, and supplies to your fridge and find out what drinks you can make.</h4>
@@ -24,4 +37,4 @@
   <h4>See what drinks your circle can make and do away with the stale pregame routine.</h4> 
 </div>
 
-
+-->

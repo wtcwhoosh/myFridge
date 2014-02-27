@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140216222545) do
+ActiveRecord::Schema.define(version: 20140222190741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20140216222545) do
     t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "drink_types", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "picture"
   end
 
   create_table "feedback_ratings", force: true do |t|
@@ -135,14 +127,6 @@ ActiveRecord::Schema.define(version: 20140216222545) do
     t.boolean  "blackout_post"
   end
 
-  create_table "moods", force: true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "picture"
-  end
-
   create_table "pictures", force: true do |t|
     t.string   "picture"
     t.integer  "imageable_id"
@@ -172,12 +156,8 @@ ActiveRecord::Schema.define(version: 20140216222545) do
     t.text     "instruction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "recipe_looper_id",             default: 1
-    t.integer  "user_id"
-    t.integer  "drink_type_id"
-    t.string   "drinktype",        limit: nil
-    t.integer  "mood_id"
-    t.integer  "setting_id"
+    t.integer  "recipe_looper_id", default: 1
+    t.string   "drinktype"
   end
 
   create_table "settings", force: true do |t|
@@ -216,10 +196,8 @@ ActiveRecord::Schema.define(version: 20140216222545) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "profilePicture"
     t.string   "username"
+    t.string   "profilePicture"
     t.string   "email"
   end
 
