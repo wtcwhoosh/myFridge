@@ -10,7 +10,7 @@ class Memory < ActiveRecord::Base
 
   def blacked_out?
     memory = Memory.find_by_id(id)
-    if memory.blackout_post? and Time.now - memory.timeposted > 86400
+    if memory.blackout_post? and Time.now - memory.timeposted > 60
       true
     else
       false
